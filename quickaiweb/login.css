@@ -13,7 +13,8 @@
 .login1 {
     padding-left: 450px;
     padding-right: 450px;
-    padding-top: 200px;
+    padding-top: 100px;
+
 }
 
 footer {
@@ -55,8 +56,92 @@ footer {
 
 #btn1 {
     background-color: rgba(24, 70, 152,1);
+    display: flex;
+    margin-left: 1000px;
+}
+    #btn1 a{
+        text-decoration:none;
+        color:white;
+    }
+
+    #btn2 {
+        color: #fff;
+    }
+@media screen and (max-width: 375px) {
+    nav {
+        align-items: center;
+        display: flex;
+        padding: 10px 2%;
+        justify-content: space-between;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        position: relative;
+        top: 0;
+        z-index: 10;
+    }
+
+    .login1 {
+        padding: 20px;
+    }
+
+    footer {
+        height: 80%;
+        background-color: #303030;
+        margin-top: 20px;
+    }
+
+    .foot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .foot2 {
+        padding: 20px;
+        color: aliceblue;
+        text-align: center;
+    }
+
+        .foot2 a {
+            text-decoration: none;
+            list-style-type: none;
+            color: #808080;
+        }
+
+    .foot4 {
+        padding: 20px;
+        color: #808080;
+        text-align: center;
+    }
+
+    .foot5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #btn a {
+        color: whitesmoke;
+    }
+
+    #btn1 {
+        background-color: rgba(24, 70, 152, 1);
+    }
+
+    #btn2 {
+        color: #fff;
+    }
 }
 
-#btn2 {
-    color: #fff;
+@media (max-width: 767px) {
+    .foot4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foot5 {
+        padding-left: 0;
+        text-indent: 0;
+    }
 }
+

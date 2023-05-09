@@ -50,6 +50,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -75,10 +76,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accountsettings.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Database2.mdf" />
+    <Content Include="App_Data\Database2_log.ldf">
+      <DependentUpon>Database2.mdf</DependentUpon>
+    </Content>
+    <Content Include="changeplan.aspx" />
+    <Content Include="dashboard.aspx" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2136,18 +2144,47 @@
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="forgot.aspx" />
+    <Content Include="forgot.css" />
     <Content Include="homepage.aspx" />
     <Content Include="homepage.css" />
+    <Content Include="homepage.js" />
     <Content Include="images\ai.png" />
     <Content Include="images\hh.png" />
     <Content Include="images\hype.png" />
     <Content Include="images\iii.PNG" />
+    <Content Include="images\unnamed.jpg" />
     <Content Include="login.css" />
+    <Content Include="loginmediaquery.css" />
     <Content Include="loginpage.aspx" />
+    <Content Include="membership.aspx" />
     <Content Include="signup.aspx" />
+    <Content Include="signup.css" />
+    <Content Include="upgrade.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accountsettings.aspx.cs">
+      <DependentUpon>accountsettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accountsettings.aspx.designer.cs">
+      <DependentUpon>accountsettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changeplan.aspx.cs">
+      <DependentUpon>changeplan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changeplan.aspx.designer.cs">
+      <DependentUpon>changeplan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forgot.aspx.cs">
       <DependentUpon>forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2169,6 +2206,13 @@
     <Compile Include="loginpage.aspx.designer.cs">
       <DependentUpon>loginpage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="membership.aspx.cs">
+      <DependentUpon>membership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="membership.aspx.designer.cs">
+      <DependentUpon>membership.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
@@ -2183,6 +2227,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="upgrade.aspx.cs">
+      <DependentUpon>upgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="upgrade.aspx.designer.cs">
+      <DependentUpon>upgrade.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

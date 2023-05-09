@@ -1,0 +1,36 @@
+﻿.login {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login1 {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-top:50px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+#btn1 {
+    margin-top: 10px;
+}
+
+/* Media queries for mobile */
+@media (max-width: 375px) {
+    .login1 {
+        padding: 10px;
+    }
+
+    h3 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #btn1 {
+        width: 100%;
+    }
+}

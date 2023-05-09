@@ -2,48 +2,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <link href="signup.css" rel="stylesheet" />
     <div class="login">
         <div class="login1">
-           <h3 style="padding-left: 100px;"> <b>Lets Create Your account</b></h3>
-            <form>
+           <h3 style="padding-left: 30px;"> <b>Lets Create Your account</b></h3>
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input id="Full Name" type="text"  class="form-control" name="Full Name" placeholder="Full Name" required>
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox1" class="form-control"  placeholder="Full_Name"  runat="server">
+                  </asp:TextBox>
                 </div><br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="Full Name" type="text"  class="form-control" name="Full Name" placeholder="Username" required>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox2" class="form-control"  placeholder="User_name"  runat="server">
+                    </asp:TextBox>
                   </div><br>
-              </form>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="text" class="form-control" name="email" placeholder="Email" required>
-              </div><br>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox3" class="form-control"  placeholder="Email"  runat="server" TextMode="Email">
+                 </asp:TextBox>
+              </div> 
+                <br>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><asp:TextBox ID="TextBox4" class="form-control" name="password" placeholder="Password" runat="server">
+                 </asp:TextBox>
               </div><br>
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">By clicking on Register button you are agree to our Terms & Condition</label>
               </div>
               <div >
-                <button class="btn btn-primary"  style="width: 100%;" id="btn1" onclick="myfunction2()"> <a href="hypt.html" id="btn2" style="text-decoration: none;" > Register</a></button>
-              </div>
+              <asp:Button ID="Button1"  class="btn btn-primary" runat="server" Text="Register" OnClick="Button1_Click" style="width: 100%;"/>           
         </div>
     </div>  
-
-<script>
-    function myfunction2(){
-        alert('successfully registered')
-    }
-</script>
-
-
-
-
-
-
+ </div>  
 
 </asp:Content>

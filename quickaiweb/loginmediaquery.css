@@ -1,0 +1,39 @@
+﻿@media (max-width: 375px) {
+    .nav {
+        display: block;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .navbar-nav li {
+            display: none;
+        }
+
+    .dropdown {
+        display: block;
+    }
+
+    .login1 {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 50px;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    #btn {
+        width: 100%;
+    }
+}

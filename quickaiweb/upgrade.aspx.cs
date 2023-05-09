@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace quickaiweb
 {
-    public partial class forgot : System.Web.UI.Page
+    public partial class upgrade : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>alert('request sent successfully 😍');</script>");
         }
     }
 }
