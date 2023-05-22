@@ -1,11 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="changeplan.aspx.cs" Inherits="quickaiweb.changeplan" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Changeplan</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta charset="utf-8"/>
@@ -15,8 +13,8 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <style>
-        .navbar {
+<style>
+.navbar {
     position: sticky;
     width: 100%;
     position: fixed;
@@ -25,8 +23,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color:white;
 }
-
-        footer {
+footer {
     height: 80%;
     background-color: #303030;
     margin-top: 100px;
@@ -41,12 +38,12 @@
     color: aliceblue;
 }
 
-    .foot2 a {
-        text-decoration: none;
-        list-style-type: none;
-        color: aliceblue;
-        color: #808080;
-    }
+.foot2 a {
+    text-decoration: none;
+    list-style-type: none;
+    color: aliceblue;
+    color: #808080;
+}
 
 .foot4 {
     padding: 20px;
@@ -59,44 +56,189 @@
     text-indent: 10px;
 }
 .main{
-            margin-left: 160px;
-            margin-right: 160px;
-            margin-top:100px;
-            
-        }
-        .section{
-           display: flex;
-           
-        }
-        .radio{
-            margin-left: 400px;
-            
-            
-        }
-        .section2{
-            margin-top: 100px;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            width: 100%;
-            height: 500px;
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top:100px;    
+}
+.section{
+   display: flex;
+   
+}
+.radio{
+    margin-left: 400px;
+    
+    
+}
+.section2{
+    margin-top: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.innersection{
+    display: flex;
+}
+.innersection a{
+    color:whitesmoke;
+}
+.innersection li{
+    text-decoration: none;
+    list-style-type: none;
+    margin-top: 8px;
+   
+}
+.innersection li button:hover{
+    background-color: rgb(33, 148, 224);
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 10px;
+    }
+
+    /* Main */
+    .main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    /* Radio */
+    .radio {
+        margin-left: 20px;
+    }
+
+    /* Section2 */
+    .section2 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Innersection */
+    .innersection {
+        flex-direction: column;
+    }
+
+    /* Foot2 */
+    .foot2 {
+        padding: 20px;
+    }
+
+    /* Foot4 */
+    .foot4 {
+        padding: 10px;
+    }
+
+    /* Foot5 */
+    #foot5 {
+        padding-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 5px;
+    }
+
+    /* Main */
+    .main {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Radio */
+    .radio {
+        margin-left: 10px;
+    }
+
+    /* Innersection */
+    .innersection li {
+        margin-top: 5px;
+    }
+
+    /* Foot2 */
+    .foot2 {
+        padding: 10px;
+    }
+
+    /* Foot4 */
+    .foot4 {
+        padding: 5px;
+    }
+}
+    @media screen and (max-width: 375px) {
+        nav {
+            align-items: center;
             display: flex;
+            padding: 10px 2%;
             justify-content: space-between;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            position: relative;
+            top: 0;
+            z-index: 10;
         }
-        .innersection{
+
+        .login1 {
+            padding: 20px;
+        }
+
+        footer {
+            height: 80%;
+            background-color: #303030;
+            margin-top: 20px;
+        }
+
+        .foot {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .innersection a{
-            color:whitesmoke;
+
+        .foot2 {
+            padding: 20px;
+            color: aliceblue;
+            text-align: center;
         }
-        .innersection li{
-            text-decoration: none;
-            list-style-type: none;
-            margin-top: 8px;
-           
+
+            .foot2 a {
+                text-decoration: none;
+                list-style-type: none;
+                color: #808080;
+            }
+
+        .foot4 {
+            padding: 20px;
+            color: #808080;
+            text-align: center;
         }
-        .innersection li button:hover{
-            background-color: rgb(33, 148, 224);
+
+        .foot5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-    </style>
+    }
+
+@media (max-width: 767px) {
+    .foot4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foot5 {
+        padding-left: 0;
+        text-indent: 0;
+    }
+}
+
+</style>
 </head>
 <body>
    <nav class="navbar">
@@ -111,14 +253,14 @@
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
             </ul>
             <div class="btn-group bootstrap-select language-switcher">
               <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
@@ -264,8 +406,8 @@
 
 
 
-    <script>
-    function enableInputField(value) {
+<script>
+  function enableInputField(value) {
   const radioButtons = document.getElementsByName('radio-buttons');
   const inputField = document.getElementById('input-field');
   for (let i = 0; i < radioButtons.length; i++) {

@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accountsettings.aspx" />
+    <Content Include="Affiliate.aspx" />
+    <Content Include="AIchat.aspx" />
+    <Content Include="AICode.aspx" />
+    <Content Include="AIimages.aspx" />
+    <Content Include="all AI images.aspx" />
+    <Content Include="alldocuments.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -85,6 +91,7 @@
     <Content Include="App_Data\Database2_log.ldf">
       <DependentUpon>Database2.mdf</DependentUpon>
     </Content>
+    <Content Include="blog.aspx" />
     <Content Include="changeplan.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="fontawesome\css\all.css" />
@@ -2149,16 +2156,26 @@
     <Content Include="homepage.css" />
     <Content Include="homepage.js" />
     <Content Include="images\ai.png" />
+    <Content Include="images\amogh.png" />
     <Content Include="images\hh.png" />
     <Content Include="images\hype.png" />
     <Content Include="images\iii.PNG" />
+    <Content Include="images\moon.png" />
+    <Content Include="images\sun.png" />
     <Content Include="images\unnamed.jpg" />
     <Content Include="login.css" />
     <Content Include="loginmediaquery.css" />
     <Content Include="loginpage.aspx" />
     <Content Include="membership.aspx" />
+    <Content Include="NewFolder1\bootstrap.min.css" />
+    <Content Include="NewFolder1\bootstrap.min.js" />
+    <Content Include="NewFolder1\jquery-3.3.1.slim.min.js" />
+    <Content Include="NewFolder1\popper.min.js" />
     <Content Include="signup.aspx" />
     <Content Include="signup.css" />
+    <Content Include="speech to text.aspx" />
+    <Content Include="templates.aspx" />
+    <Content Include="transcation.aspx" />
     <Content Include="upgrade.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -2170,6 +2187,55 @@
     <Compile Include="accountsettings.aspx.designer.cs">
       <DependentUpon>accountsettings.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Affiliate.aspx.cs">
+      <DependentUpon>Affiliate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Affiliate.aspx.designer.cs">
+      <DependentUpon>Affiliate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AIchat.aspx.cs">
+      <DependentUpon>AIchat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AIchat.aspx.designer.cs">
+      <DependentUpon>AIchat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AICode.aspx.cs">
+      <DependentUpon>AICode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AICode.aspx.designer.cs">
+      <DependentUpon>AICode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AIimages.aspx.cs">
+      <DependentUpon>AIimages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AIimages.aspx.designer.cs">
+      <DependentUpon>AIimages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="all AI images.aspx.cs">
+      <DependentUpon>all AI images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="all AI images.aspx.designer.cs">
+      <DependentUpon>all AI images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alldocuments.aspx.cs">
+      <DependentUpon>alldocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alldocuments.aspx.designer.cs">
+      <DependentUpon>alldocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="changeplan.aspx.cs">
       <DependentUpon>changeplan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2177,7 +2243,6 @@
     <Compile Include="changeplan.aspx.designer.cs">
       <DependentUpon>changeplan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2227,6 +2292,27 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="speech to text.aspx.cs">
+      <DependentUpon>speech to text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="speech to text.aspx.designer.cs">
+      <DependentUpon>speech to text.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates.aspx.cs">
+      <DependentUpon>templates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates.aspx.designer.cs">
+      <DependentUpon>templates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="transcation.aspx.cs">
+      <DependentUpon>transcation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="transcation.aspx.designer.cs">
+      <DependentUpon>transcation.aspx</DependentUpon>
     </Compile>
     <Compile Include="upgrade.aspx.cs">
       <DependentUpon>upgrade.aspx</DependentUpon>

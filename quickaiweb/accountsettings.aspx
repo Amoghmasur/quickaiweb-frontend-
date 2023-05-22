@@ -1,14 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="accountsettings.aspx.cs" Inherits="quickaiweb.accountsettings" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Account settings</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="images/hh.png"/><link rel="icon" type="image/x-icon" href="images/hh.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -16,17 +15,17 @@
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
-    <style>
-        #leftSide {
+<style>
+#leftSide {
     background-color: #fff;
     border: 1px;
     overflow-y: scroll; /* Add the ability to scroll */
 }
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    #leftSide::-webkit-scrollbar {
-        display: none;
-    }
+/* Hide scrollbar for Chrome, Safari and Opera */
+#leftSide::-webkit-scrollbar {
+    display: none;
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
 #leftSide {
@@ -93,7 +92,7 @@
 }
 #a{
     background-color:#33334d;
-    color:grey
+    color:white;
 }
 #button{
     float:right;
@@ -127,57 +126,71 @@
      margin-top:120px;
     padding-left:30px;
 }
+#rightSide {
+  transition: transform 0.3s ease;
+}
+
+#rightSide.fit-page {
+  transform: translateX(0);
+}
+
+.sidebar-open #rightSide {
+  transform: translateX(200px);
+}
+
+.sidebar-open #rightSide.fit-page {
+  transform: translateX(200px);
+  width: calc(100% - 200px);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar-open #rightSide {
+    transform: translateX(0);
+    width: 100%;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+}
 
 
-  @media screen and (max-width: 767px) {
-      .input-group {
-        flex-direction: column;
-      }
-
-      .input-group-addon {
-        border: 1px solid #ccc;
-        border-bottom: 0;
-      }
-
-      .form-control {
-        border: 1px solid #ccc;
-        border-top: 0;
-      }
-
-      .btn-group button {
-        margin-bottom: 10px;
-      }
-
-      .bill {
-        display: none;
-      }
-
-      .city {
-        flex-direction: column;
-      }
-
-      .city input {
-        margin-bottom: 10px;
-      }
+@media screen and (max-width: 767px) {
+    .input-group {
+      flex-direction: column;
     }
-        @media screen and (max-width: 900px) {
-            #leftSide {
-                display: none;
-            }
-        }
 
+    .input-group-addon {
+      border: 1px solid #ccc;
+      border-bottom: 0;
+    }
 
+    .form-control {
+      border: 1px solid #ccc;
+      border-top: 0;
+    }
 
+    .btn-group button {
+      margin-bottom: 10px;
+    }
 
+    .bill {
+      display: none;
+    }
 
+    .city {
+      flex-direction: column;
+    }
 
-    </style>
+    .city input {
+      margin-bottom: 10px;
+    }
+  }
+      @media screen and (max-width: 1100px) {
+          #leftSide {
+              display: none;
+          }
+      }
 
-
-
-
-
-
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -194,11 +207,11 @@
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/speech%20to%20text.aspx"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
@@ -235,26 +248,30 @@
     <div class="col-lg-2" id="leftSide" style="width:20%">
       <p>My Account</p>
       <p><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></p>
-      <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents</a></p>
+      <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
          <div id="demo" class="collapse">
-        <a href="#">All AI Images</a><br /><br />
-         <a href="#">All AI Documents</a>
+        <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
+         <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
       </div>
       <p>Organize and manage</p>
-      <p><a href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
-      <p><a href="#"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
-      <p><a href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
-      <p><a href="#"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
-      <p><a href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
-      <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
+      <p><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
+      <p><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
+      <p><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
+      <p><a href="http://localhost:49935/AIchat.aspx"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
+      <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
+      <p><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></p>
       <p>Accounts</p>
-      <p><a href="#"><i class="fa-solid fa-code-branch"></i>Affiliate Program</a></p>
+      <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
+        <div id="demo4" class="collapse">
+         <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
+         <a href="#">Withdrawals</a>
+        </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
-      <p><a href="#"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
+      <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
       <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
-      <p><a href="#"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
+      <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
     </div>
-      <div class="col-lg-10" id="rightSide" style="width:80%">
+      <div class="col-lg-10 col-xs-12 col-sm-9 col-md-6" id="rightSide" style="width:80%">
           <h3>Account Setting</h3>
              <div class="btn-group btn-group-lg" id="button">
                <button type="button" id="a" class="btn btn-primary">Home</button>
@@ -297,105 +314,49 @@
                    <asp:DropDownList ID="DropDownList2" Width="90%" Height="8%" runat="server">
                        <asp:ListItem>Hong</asp:ListItem>
                        <asp:ListItem Value="AF">Afghanistan</asp:ListItem>
-
-    <asp:ListItem Value="AL">Albania</asp:ListItem>
-
-    <asp:ListItem Value="DZ">Algeria</asp:ListItem>
-
-    <asp:ListItem Value="AS">American Samoa</asp:ListItem>
-
-    <asp:ListItem Value="AD">Andorra</asp:ListItem>
-
-    <asp:ListItem Value="AO">Angola</asp:ListItem>
-
-    <asp:ListItem Value="AI">Anguilla</asp:ListItem>
-
-    <asp:ListItem Value="AQ">Antarctica</asp:ListItem>
-
-    <asp:ListItem Value="AG">Antigua And Barbuda</asp:ListItem>
-
-    <asp:ListItem Value="AR">Argentina</asp:ListItem>
-
-    <asp:ListItem Value="AM">Armenia</asp:ListItem>
-
-    <asp:ListItem Value="AW">Aruba</asp:ListItem>
-
-    <asp:ListItem Value="AU">Australia</asp:ListItem>
-
-    <asp:ListItem Value="AT">Austria</asp:ListItem>
-
-    <asp:ListItem Value="AZ">Azerbaijan</asp:ListItem>
-
-    <asp:ListItem Value="BS">Bahamas</asp:ListItem>
-
-    <asp:ListItem Value="BH">Bahrain</asp:ListItem>
-        </asp:DropDownList><br /><br />
+                       <asp:ListItem Value="AL">Albania</asp:ListItem>
+                       <asp:ListItem Value="DZ">Algeria</asp:ListItem>
+                       <asp:ListItem Value="AS">American Samoa</asp:ListItem>
+                       <asp:ListItem Value="AD">Andorra</asp:ListItem>
+                       <asp:ListItem Value="AO">Angola</asp:ListItem>
+                       <asp:ListItem Value="AI">Anguilla</asp:ListItem>
+                       <asp:ListItem Value="AQ">Antarctica</asp:ListItem>
+                       <asp:ListItem Value="AG">Antigua And Barbuda</asp:ListItem>
+                       <asp:ListItem Value="AR">Argentina</asp:ListItem>
+                       <asp:ListItem Value="AM">Armenia</asp:ListItem>
+                       <asp:ListItem Value="AW">Aruba</asp:ListItem>
+                       <asp:ListItem Value="AU">Australia</asp:ListItem>
+                       <asp:ListItem Value="AT">Austria</asp:ListItem>
+                       <asp:ListItem Value="AZ">Azerbaijan</asp:ListItem>
+                       <asp:ListItem Value="BS">Bahamas</asp:ListItem>
+                       <asp:ListItem Value="BH">Bahrain</asp:ListItem>
+                    </asp:DropDownList><br /><br />
                     <asp:Button ID="Button2"  class="btn btn-primary" placeholder="Save changes" runat="server" Text="Save Changes" />
                    </div><br /><br />
               </div>
         </div>    
-                  
-                  
-                  
-                 
-                  
-                  
-                  
-                 
-                  
-            
-
-
-
+                                 
 <footer class="container-fluid text-center">
   <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
-    <div class="container-fluid text-right">
-   <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-     <a href="#"><i class="fa-brands fa-instagram"></i></a>
-     <a href="#"><i class="fa-brands fa-twitter"></i></a>
-     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-     <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-     <a href="#"><i class="fa-brands fa-youtube"></i></a>
-    </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <script>
+</div>      
+</div>
+        
+ <script>
               $(document).ready(function () {
                   $("#ClickBtn").click(function () {
                       $("#leftSide").toggle();
                       $("#rightSide").toggleClass('col-lg-12 full-width')
                   });
               });
-          </script>
-        </div>
-        
-        </div>
-        
-        
-       
-        
-        
-       
-        
-        
-       
-        
-        
+
+     document.getElementById("ClickBtn").addEventListener("click", function () {
+         document.getElementById("rightSide").classList.toggle("fit-page");
+         document.body.classList.toggle("sidebar-open");
+     });
+
+ </script>
+            
     </form>
 </body>
 </html>

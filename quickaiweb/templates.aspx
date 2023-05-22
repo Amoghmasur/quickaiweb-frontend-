@@ -1,68 +1,168 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="quickaiweb.homepage" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-    <link href="homepage.css" rel="stylesheet" />
-
-
-   
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="templates.aspx.cs" Inherits="quickaiweb.templates" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Templates</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="images/hh.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="fontawesome/css/all.css" rel="stylesheet" />
-    <style>
-      
+    <script src="fontawesome/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="fontawesome/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<style>
+#leftSide {
+   background-color: #fff;
+   border: 1px;
+   overflow-y: scroll; /* Add the ability to scroll */
+}
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+#leftSide::-webkit-scrollbar {
+     display: none;
+    }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#leftSide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:white;
+}
+#leftSide{
+    padding-top: 40px;
+    height: 600px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: sticky;
+    top: 0; 
+    background: #fff; 
+}
+#leftSide a {
+    font-size: 15px;
+    color: #707070;
+}
+
+#leftSide p {
+    padding-top: 30px;
+    color: #1973da;
+}
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+
+    .sidenav {
+        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
+        display: none;
+        width:0px;
+        height:0px;
+        overflow:hidden;
+    }
+
+    #leftSide {
+        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
+        display: none;
+        width: 0px;
+        height: 0px;
+        overflow:hidden;
+        position:absolute;
+    }
+}
+#rightSide{
+    top:60px;
+}
+#a{
+    background-color:#707070;
+    color:white;
+}
+#button{
+    float:right;
+}
+.main{
+    margin-top:130px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width:100%;
+    height:350px; 
+}
+.section{
+    justify-content:space-between;
+    display:flex;
+    height:65px;
+    width:100%;
+    top:20px; 
+}
 .category-1 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-2 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-3 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-5 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-4 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-6 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width: 280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
 }
 .category-7 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     width: 350px;
-    height: 180px;
+    width:280px;
+    height: 150px;
     background-color:#fff;
     margin:10px;
     border-radius:15px;
@@ -78,100 +178,129 @@
     display:flex;
     justify-content:space-between;
     background-color:#EEEEEE; 
-    height:38px;
+    height:30px;
     border-radius:50px;
 }
-.container{
-   border-radius:10px;
+#myInput{
+    width:800px;
+    border-radius:25px;
+    height:35px;
 }
-.section{
-    border-radius:10px;
-}
-
-
-@media (max-width: 480px) {
-    .content {
-        padding: 10px;
-    }
+#rightSide {
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 620px) {
-    h4 {
-        font-size: 16px;
-    }
-}
-@media screen and (max-width: 675px) {
-        footer {
-            height: 80%;
-            background-color: #303030;
-            margin-top: 20px;
-        }
-
-        .foot {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .foot2 {
-            padding: 20px;
-            color: aliceblue;
-            text-align: center;
-        }
-
-            .foot2 a {
-                text-decoration: none;
-                list-style-type: none;
-                color: #808080;
-            }
-
-        .foot4 {
-            padding: 20px;
-            color: #808080;
-            text-align: center;
-        }
-
-        .foot5 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-
-@media (max-width: 767px) {
-    .foot4 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #foot5 {
-        padding-left: 0;
-        text-indent: 0;
-    }
+#rightSide.fit-page {
+  transform: translateX(0);
 }
 
+.sidebar-open #rightSide {
+  transform: translateX(200px);
+}
 
+.sidebar-open #rightSide.fit-page {
+  transform: translateX(200px);
+  width: calc(100% - 200px);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
 
-    </style>
-    
+@media (max-width: 768px) {
+  .sidebar-open #rightSide {
+    transform: translateX(0);
+    width: 100%;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+}
 
-
-<img class="a" src="images/ai.png" />
-<p class="pp">Best AI Content Writer</p>
-    <img class="iii" src="images/iii.PNG" /> <br><br>
-<button id="free" class="btn btn-primary"><a href="http://localhost:49935/signup.aspx">Get Started For Free</a></button ><br>
- 
-
-
-
-
-    <div class="section padding-top-65 padding-bottom-65" >
+</style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="#"><img width="60px" src="images/hype.png" /></a></li>
+        <li>  <p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <a href="#" id="imageDropdown"  data-toggle="dropdown">
+                <img src="images/unnamed.jpg"  width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+            </ul>
+            <div class="btn-group bootstrap-select language-switcher">
+              <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
+                  <span class="filter-option pull-left" id="selected_lang">en</span>&nbsp;
+                  <span class="caret"></span>
+              </button>
+              <div class="dropdown-menu scrollable-menu open">
+                <ul class="dropdown-menu inner">
+                  <li data-lang="arabic">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Arabic</a>
+                  </li><li data-lang="bangali">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bangali</a>
+                  </li><li data-lang="bulgarian">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bulgarian</a>
+                  </li><li data-lang="chinese">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Chinese</a>
+                  </li><li data-lang="english">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">English</a>
+                  </li><li data-lang="hindi">
+                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Hindi</a> </li>
+                </ul>
+             </div>
+          </div>
+          </ul>
+      </div>
+    </div>
+</nav>
+  
+<div class="container-fluid text-left">    
+  <div class="row content ">
+    <div class="col-lg-2" id="leftSide" style="width:20%">
+      <p>My Account</p>
+      <p><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></p>
+      <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
+      <div id="demo" class="collapse">
+        <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
+        <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
+      </div>
+      <p>Organize and manage</p>
+      <p><a href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
+      <p><a href="#"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
+      <p><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
+      <p><a href="#"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
+      <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
+      <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
+      <p>Accounts</p>
+      <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
+        <div id="demo4" class="collapse">
+         <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
+         <a href="#">Withdrawals</a>
+        </div>
+      <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
+      <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
+      <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
+      <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
+    </div>
+      <div class="col-lg-10  col-xs-12 col-sm-9 col-md-6 " id="rightSide" style="width:80%">
+          <h3>All Templates</h3>
+             <div class="btn-group btn-group-lg" id="button">
+               <button type="button" id="a" class="btn btn-primary">Home</button>
+               <button type="button" id="a" class="btn btn-primary">All Templates</button>
+             </div> 
+          <input id="myInput" type="text" placeholder="Search..">
+          <div class="section padding-top-65 padding-bottom-65" >
         <div class="container margin-bottom-20" >
-            <div class="section-headline centered margin-top-0 margin-bottom-30">
-                <center>
-                <h3 class="margin-bottom-5">Templates</h3>
-                <p>Generate your required content with over 60+ content creation templates</p></center>
-            </div>
             <div class="template-categories home-templates"><br /><br />
                 <ul>
                     <li class="active"><a href="javascript:void();" class="ai-templates-category"
@@ -192,12 +321,12 @@
                                data-category="7">Other</a></li>
                                     </ul>
             </div><br /><br />
-           <div class="row1 ai-template-blocks" id="myTable" >
+            <div class="row1 ai-template-blocks" id="myTable" >
                                     <div class="col-md-12 ai-templates-category-title">
                         <h4>Article And Blogs</h4>
                                         <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     </div>
-                        <div class="col-md-12 col-sm-12 category-1" >
+                        <div class="col-md-4 col-sm-6 category-1" >
                             <a href="http://hype.sociusus.com/ai-templates/blog-ideas">
                                 <div class="dashboard-box ai-templates ">
                                     <div class="content">
@@ -211,7 +340,7 @@
                                 </div>
                             </a>
                         </div>
-                         <div class="col-md-12 col-sm-12 category-1">
+                         <div class="col-md-4 col-sm-6 category-1">
                             <a href="http://hype.sociusus.com/ai-templates/blog-intros">
                                 <div class="dashboard-box ai-templates ">
                                     <div class="content">
@@ -1166,238 +1295,34 @@
                    </div>
               </div>
          </div>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <div class="main">
-        <div class="section">
-              <div class="section1">
-                <h1>Membership Plan</h1>
-                <div class="radio">
-               <input type="radio"  name="radio-buttons" value="monthly" onchange="enableInputField(5)"/> Monthly&nbsp; &nbsp; &nbsp;
-               <input type="radio" name="radio-buttons" value="yearly" onchange="enableInputField(50)"/> Yearly&nbsp; &nbsp; &nbsp;
-               <input type="radio" name="radio-buttons" value="Lifetime" onchange="enableInputField(550)"/> Life Time&nbsp; &nbsp; &nbsp;
-                </div>
-              </div>
-        </div>
-        <div class="section2">
-            <div class="innersection">      
-            <ul>
-                <li><strong>Free Plan</strong></li>
-                <li><button style="width:200px;">Free</button></li>
-                <li>Features of Free Plan</li>
-                <li><b>32</b> AI Document Templates</li>
-                <li><b>10,000</b> Words per month</li>
-                <li><b>100</b> Images per month</li>
-                <li><b>0</b> Speech to Text per month </li>
-                <li><b>0</b> MB Audio file size limit</li>
-                <li> <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>AI Chat <i class="fa-solid fa-circle-question"></i> </li>
-                 <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i> AI Code<i class="fa-solid fa-circle-question"></i></li>
-                <li> <i class="fa-regular fa-circle-check" style="color: #5af207;"></i>Hide Ads</li>
-                 <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>Free Setup</li>
-                 <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>Free Support</li>
-                <li><button  class="btn btn-primary" style="width:200px;">Current Plan</button></li>
-            </ul>
-            </div>
-            <div class="innersection">            
-                <ul>
-                    <li><strong>Trail Plan</strong></li>
-                    <li><button style="width:200px;">Trail</button></li>
-                    <li>Features of Free Plan</li>
-                    <li><b>32</b> AI Document Templates</li>
-                    <li><b>10,000</b> Words per month</li>
-                    <li><b>100</b> Images per month</li>
-                    <li><b>0</b> Speech to Text per month </li>
-                    <li><b>0</b> MB Audio file size limit</li>
-                    <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>AI Chat <i class="fa-solid fa-circle-question"></i></li>
-                    <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i> AI Code<i class="fa-solid fa-circle-question"></i></li>
-                    <li><i class="fa-regular fa-circle-check" style="color: #5af207;"></i> Hide Ads</li>
-                    <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>Free Setup</li>
-                    <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>Free Support</li>
-                     <li><button class="btn btn-primary" style="width:200px;">Upgrade</button></li>
-                </ul>
-                </div>
-                <div class="innersection">
-                    <ul>
-                        <li><strong>Extended Plan</strong></li>
-                        <li><input type="text" id="input-field" disabled></li>
-                        <li>Features of Free Plan</li>
-                        <li><b>32</b> AI Document Templates</li>
-                        <li><b>10,000</b> Words per month</li>
-                        <li><b>100</b> Images per month</li>
-                        <li><b>0</b> Speech to Text per month </li>
-                        <li><b>0</b> MB Audio file size limit</li>
-                        <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>AI Chat <i class="fa-solid fa-circle-question"></i> </li>
-                        <li><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i> AI Code<i class="fa-solid fa-circle-question"></i></li>
-                        <li><i class="fa-regular fa-circle-check" style="color: #5af207;"></i> AI Code</li>
-                        <li><i class="fa-regular fa-circle-check" style="color: #5af207;"></i>Free Setup</li>
-                        <li><i class="fa-regular fa-circle-check" style="color: #5af207;"></i>Free Support</li>
-                         <li><button class="btn btn-primary" style="width:200px;"><a href="http://localhost:49935/upgrade.aspx">   Upgrade</a></button></li>
-                    </ul>
-             </div>
-        </div>
-    </div>
-
-
-    <h3><center>Testimonials</center></h3>
- <div style="background-color:whitesmoke;" class="testimonials">
-    <h2 class="title">Some words from our costumers</h2>
-    <p class="description">We've been helping businesses to do their best since 2003.</p>
-  
-    <div class="slider-container">
-      <div class="slider">
-        <div class="slide-box">
-          <!-- Testi One -->
-          <p class="comment">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" />
-          <h3 class="name">Albert Sinelly</h3>
-          <h4 class="job">Founder Of Devoker Company</h4>
-        </div>
-        <div class="slide-box">
-          <!-- Testi Two -->
-          <p class="comment">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <img src="https://images.unsplash.com/photo-1627541718143-1adc1b582e62?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVzbGltfGVufDB8MnwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          <h3 class="name">Hirok Meryam</h3>
-          <h4 class="job">Full stack Developer, Speaker</h4>
-        </div>
-        <div class="slide-box">
-          <!-- Testi Three -->
-          <p class="comment">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          <h3 class="name">Sebastian Sert</h3>
-          <h4 class="job">UX/UI Designer, Photographer</h4>
-        </div>
-      </div>
-  
-      <a href="#!" class="control-slider btn-left">
-        <i class="fas fa-chevron-left"></i>
-      </a>
-      <a href="#!" class="control-slider btn-right">
-        <i class="fas fa-chevron-right"></i>
-      </a>
-    </div>
-  </div>
-
-<a href="http://localhost:49935/blog.aspx">
-<div class="recentblog">
- <div class="blog" >  
-     <h3>Recent Blog</h3>
-     <button>Admin</button>
-     <div class="blog3">
-     <p>3 years ago</p>
-     <p>
-         Further down the page, more article headlines are sorted by the most recent to the oldest and accompanied by
-         a picture and sentence summarizing the article’s content. This lets visitors know that the blog is regularly 
-         updated with a variety of content.
-     </p>
      </div>
- </div>
-      <div class="blog2">
-        <a href="http://localhost:49935/blog.aspx">View blogs</a>
-      </div>
 </div>
-</a>
+
+ <script>
+              $(document).ready(function () {
+                  $("#ClickBtn").click(function () {
+                      $("#leftSide").toggle();
+                      $("#rightSide").toggleClass('col-lg-12 full-width')
+                  });
+              });
 
 
+     $('.ai-templates-category').on('click', function (e) {         e.preventDefault();         // make active         $('.template-categories li').removeClass('active');         $(this).parents('li').addClass('active');         if ($(this).data('category') === 'all') {             $('.ai-template-blocks > div').show();             $('.ai-templates-category-title').show();         } else {             $('.ai-template-blocks > div').hide();             $('.category-' + $(this).data('category')).show();             $('.ai-templates-category-title').hide();             // empty search             $('#template-search').val('');         }     });
 
 
+     $(document).ready(function () {
+         $("#myInput").on("keyup", function () {
+             var value = $(this).val().toLowerCase();
+             $("#myTable div").filter(function () {
+                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+             });
+         });
+     });
+     document.getElementById("ClickBtn").addEventListener("click", function () {
+         document.getElementById("rightSide").classList.toggle("fit-page");
+         document.body.classList.toggle("sidebar-open");
+     });
 
-
-
-
-
-
-
-   <script>
-       const sliderElm = document.querySelector(".slider-container .slider");
-       const btnLeft = document.querySelector(".slider-container .btn-left");
-       const btnRight = document.querySelector(".slider-container .btn-right");
-
-       const numberSliderBoxs = sliderElm.children.length;
-       let idxCurrentSlide = 0;
-
-       // Functions:
-       function moveSlider() {
-           let leftMargin = (sliderElm.clientWidth / numberSliderBoxs) * idxCurrentSlide;
-           sliderElm.style.marginLeft = -leftMargin + "px";
-           console.log(sliderElm.clientWidth, leftMargin);
-       }
-       function moveLeft() {
-           if (idxCurrentSlide === 0) idxCurrentSlide = numberSliderBoxs - 1;
-           else idxCurrentSlide--;
-
-           moveSlider();
-       }
-       function moveRight() {
-           if (idxCurrentSlide === numberSliderBoxs - 1) idxCurrentSlide = 0;
-           else idxCurrentSlide++;
-
-           moveSlider();
-       }
-
-       // Event Listeners:
-       btnLeft.addEventListener("click", moveLeft);
-       btnRight.addEventListener("click", moveRight);
-       window.addEventListener("resize", moveSlider);
-
-       function enableInputField(value) {
-           const radioButtons = document.getElementsByName('radio-buttons');
-           const inputField = document.getElementById('input-field');
-           for (let i = 0; i < radioButtons.length; i++) {
-               if (radioButtons[i].checked) {
-                   inputField.disabled = false;
-                   switch (value) {
-                       case 5:
-                           inputField.value = "₹" + value + " per month";
-                           break;
-                       case 50:
-                           inputField.value = "₹" + value + " per year";
-                           break;
-                       case 550:
-                           inputField.value = "₹" + value + " lifetime";
-                           break;
-                       default:
-                           inputField.value = "";
-                           break;
-                   }
-                   return;
-               }
-           }
-           inputField.disabled = true;
-           inputField.value = "";
-       }
-       $('.ai-templates-category').on('click', function (e) {           e.preventDefault();           // make active           $('.template-categories li').removeClass('active');           $(this).parents('li').addClass('active');           if ($(this).data('category') === 'all') {               $('.ai-template-blocks > div').show();               $('.ai-templates-category-title').show();           } else {               $('.ai-template-blocks > div').hide();               $('.category-' + $(this).data('category')).show();               $('.ai-templates-category-title').hide();               // empty search               $('#template-search').val('');           }       });
-
-   </script>  
-</asp:Content>
+ </script>
+</body>
+</html>

@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Membership</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="images/hh.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <style>
 #leftSide {
-    background-color: #fff;
+    background-color: var(--primary-color);
     border: 1px;
     overflow-y: scroll; /* Add the ability to scroll */
 }
@@ -39,7 +40,7 @@
     top: 0;
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color:white;
+    background-color:var(--primary-color);
 }
 #leftSide{
     padding-top: 40px;
@@ -50,12 +51,12 @@
 }
 #leftSide a {
     font-size: 15px;
-    color: #707070;
+    color: var(--secondary-color);
 }
 
 #leftSide p {
     padding-top: 30px;
-    color: #1973da;
+    color: var(--secondary-color);
 }
 
 
@@ -63,41 +64,13 @@
     top:60px;
 }
 #a{
-    background-color:#707070;
-    color:grey
+    background-color:black;
+    color:white;
 }
 #button{
     float:right;
 }
-.main{
-    margin-top:130px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width:100%;
-    height:350px; 
-}
-.section{
-    justify-content:space-between;
-    display:flex;
-    height:50px;
-    width:90%;
-    top:20px;
-    background-color:#707070;
-    
-}
-table{
-    width:100%;
-    height:150px;
-    margin-top:50px;
-    border-radius:2px;
-}
-table th{
-    background-color:#707070;
-    border-radius:5px;
-}
-#plan{
-    background-color:aliceblue;
-    border-radius:5px;
-}
+
 @media screen and (max-width: 767px) {
     .sidenav {
         height: auto;
@@ -135,69 +108,35 @@ table th{
     }
 
     .navbar {
-        position: fixed;
-        top: 0;
-        height: 50px;
-        box-shadow: none;
+       width:50%;
+       align-items:center;
+       align-content:center;
+       display:block;
     }
 
     #rightSide {
         top: 50px;
     }
-
-    .main {
-        margin-top: 80px;
-        height: 250px;
-    }
-
-    .section {
-        height: 40px;
-    }
-
-    table {
-        margin-top: 20px;
-    }
-
-    #plan {
-        margin-top: 20px;
-    }
 }
 
-        @media screen and (max-width: 480px) {
-            /* Adjustments for even smaller screens */
-            #leftSide {
-                padding-top: 20px;
-                height: auto;
-                margin-bottom: 30px;
-            }
+    @media screen and (max-width: 480px) {
+        /* Adjustments for even smaller screens */
+        #leftSide {
+            padding-top: 20px;
+            height: auto;
+            margin-bottom: 30px;
+        }
 
-                #leftSide a {
-                    font-size: 12px;
-                }
-
-                #leftSide p {
-                    padding-top: 20px;
-                    font-size: 14px;
-                }
-
-            .navbar {
-                height: 40px;
-            }
-
-            .main {
-                margin-top: 60px;
-                height: 200px;
-            }
-
-            .section {
-                height: 30px;
+            #leftSide a {
                 font-size: 12px;
             }
 
-            table {
-                margin-top: 10px;
+            #leftSide p {
+                padding-top: 20px;
+                font-size: 14px;
             }
-        }
+    }
+
         @media screen and (max-width: 1100px) {
             /* Adjustments for smaller screens */
             #leftSide {
@@ -224,13 +163,105 @@ table th{
   transition: transform 0.3s ease, width 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .sidebar-open #rightSide {
-    transform: translateX(0);
+.hi{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:380px;
+    background-color:var(--primary-color);
+    margin-bottom:50px;
+    color: var(--secondary-color);
+}
+.hey{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:30px;
+    background-color:var(--primary-color);
+    padding:40px 40px;
+    color:var(--secondary-color);
+}
+.inside{
+   background:var(--primary-color);
+     padding:15px;
+     margin-left:15px;
+     margin-right:15px;
+     margin-top:5px;
+     color:var(--secondary-color);
+}
+.inside1{
+   margin:20px;
+   width:100%;
+   color:var(--secondary-color);
+}
+.inside1 input[type="text"]{
+    width:80%;
+    color:var(--secondary-color);
+}
+.inside1 button{
+    width:80%;
+}
+@media screen and (max-width: 768px) {
+  .col-lg-10 {
     width: 100%;
-    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  
+  .hi,
+  .hey {
+    height: auto;
+  }
+  
+  .inside1 input[type="text"],
+  .inside1 button {
+    width: 50%;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .inside1 textarea {
+    width: 50%;
+  }
+}
+
+.inside2{
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:60px;
+    background-color:var(--primary-color);
+    padding:25px;
+}
+
+.inside3{
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height:100px;
+    background-color:var(--primary-color);
+    padding:25px;
+}
+.inside3 p{
+    background-color:#e9f7fe;
+    height:40px;
+    padding:10px;
+
+}
+#icon{
+    cursor:pointer;
+    width:30px;
+    
+}
+:root{
+   /* --primary-color:#fff;
+    --secondary-color:#212121;*/
+
+    --primary-color:#fff;
+    --secondary-color:#212121;
+}
+
+.dark-theme{
+     --primary-color:black;
+    --secondary-color:#fff;
+}
+body{
+    background:var(--primary-color);
+}
+.language-switcher{
+    background:var(--primary-color);
+}
+
 
 </style>
 </head>
@@ -250,9 +281,9 @@ table th{
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
@@ -295,10 +326,10 @@ table th{
          <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
       </div>
       <p>Organize and manage</p>
-      <p><a href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
+      <p><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
       <p><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
       <p><a href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
-      <p><a href="#"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
+      <p><a href="http://localhost:49935/AIchat.aspx"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
       <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
       <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
       <p>Accounts</p>
@@ -313,47 +344,93 @@ table th{
       <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
     </div>
       <div class="col-lg-10" id="rightSide" style="width:80%">
-          <h3>Current Plan</h3>
-             <div class="btn-group btn-group-lg" id="button">
-               <button type="button" id="a" class="btn btn-primary">Home</button>
-               <button type="button" id="a" class="btn btn-primary">Current Plan</button>
-             </div> 
-          <div class="main">
-            <div class="gift">
-                <a href="#"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 style="color:var(--secondary-color)">AI Code</h3>
+                 <img id="icon" src="images/moon.png" />
             </div>
-         <table  id="js-table-list" class="basic-table dashboard-box-list">
-               <tbody><tr>
-                   <th>Membership</th>
-                   <th>Payment Mode</th>
-                   <th>Start Date</th>
-                   <th>Expiry Date</th>
-               </tr>
-               <tr>
-                   <td>Free Plan</td>
-                   <td>One Time </td>
-                   <td>-</td>
-                   <td>-</td>
-                </tr>
-               <tr id="plan">
-                   <td align="right" colspan="7"><button type="button"  class="btn btn-primary" onclick="window.location.href='http://localhost:49935/changeplan.aspx'">Change Plan</button></td>
-               </tr>
-           </tbody></table>
+            <div class="col-lg-6">
+                 <div class="btn-group btn-group-lg" id="button">
+               <input type="button" id="a" class="btn btn-primary" value="Home" />
+               <input type="button" id="a" class="btn btn-primary" value="AI Code" />
+             </div>
+            </div>
         </div>
+           <div class="row">
+            <div class="col-lg-4">
+                 <div class="hey">
+            <i class="fa-solid fa-code"></i>&nbsp;AI Code
+             </div>
+             <div class="hi">
+                 <div class="inside">
+                     <p>Use this code generator to create code in any programming language.</p>
+                 </div>
+                 <div class="inside1">
+                     <p><b>Title*</b></p><span>0/100</span><br />
+                     <input name="title" type="text"  class="with-border small-input quick-text-counter" maxlength="20"/><br /><br />
+                     <p><b>Description*</b></p>
+                     <textarea cols="35" rows="3" placeholder="Write a Javascript function to generate a random string"></textarea>
+                     <div ></div>
+                     <button class="btn btn-primary" id="demo" onclick="myFunction()" >Generate</button><br /><br />
+                 </div>
+
+             </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="inside2">
+                    <p style="color:var(--secondary-color)"><i class="fa-solid fa-align-left fa-xl" style="color: #004dd1;"></i>Generated Result</p>
+                </div><br />
+                <div class="inside3">
+                    <p>Generated code will appear here.</p>
+                </div>
+            </div>
+            </div>
+           <div class="col-lg-6">
+                <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="container-fluid text-right">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+		            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+		            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+		            <a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+		            <a href="https://in.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+		            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+           </div>
+      
+    </div>
      </div>
 </div>
 
  <script>
-              $(document).ready(function () {
-                  $("#ClickBtn").click(function () {
-                      $("#leftSide").toggle();
-                      $("#rightSide").toggleClass('col-lg-12 full-width')
-                  });
-              });
+     $(document).ready(function () {
+         $("#ClickBtn").click(function () {
+             $("#leftSide").toggle();
+             $("#rightSide").toggleClass('col-lg-12 full-width')
+         });
+     });
      document.getElementById("ClickBtn").addEventListener("click", function () {
          document.getElementById("rightSide").classList.toggle("fit-page");
          document.body.classList.toggle("sidebar-open");
      });
+
+     function myFunction() {
+         alert("API Error: Invalid .");
+         
+     }
+
+     var icon = document.getElementById("icon");
+     icon.onclick = function () {
+         document.body.classList.toggle("dark-theme");
+         if (document.body.classList.contains("dark-theme")) {
+             icon.src = "images/sun.png";
+         }
+         else {
+             icon.src = "images/moon.png";
+         }
+     }
+   
  </script>
 </body>
 </html>

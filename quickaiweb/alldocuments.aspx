@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="membership.aspx.cs" Inherits="quickaiweb.membership" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="alldocuments.aspx.cs" Inherits="quickaiweb.alldocuments" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Membership</title>
+    <title>All Document</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -21,9 +21,9 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-#leftSide::-webkit-scrollbar {
+ #leftSide::-webkit-scrollbar {
      display: none;
-}
+ }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 #leftSide {
@@ -58,13 +58,39 @@
     color: #1973da;
 }
 
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
 
+    .row.content {
+        height: auto;
+    }
+
+    .sidenav {
+        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
+        display: none;
+        width:0px;
+        height:0px;
+        overflow:hidden;
+    }
+
+    #leftSide {
+        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
+        display: none;
+        width: 0px;
+        height: 0px;
+        overflow:hidden;
+        position:absolute;
+    }
+}
 #rightSide{
     top:60px;
 }
 #a{
     background-color:#707070;
-    color:grey
+    color:white;
 }
 #button{
     float:right;
@@ -94,144 +120,39 @@ table th{
     background-color:#707070;
     border-radius:5px;
 }
-#plan{
-    background-color:aliceblue;
-    border-radius:5px;
-}
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-
-    .row.content {
-        height: auto;
-    }
-
-    .sidenav {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width:0px;
-        height:0px;
-        overflow:hidden;
-    }
-
-    #leftSide {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width: 0px;
-        height: 0px;
-        overflow:hidden;
-        position:absolute;
-        display:none;
-    }
-}
-@media screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
-    #leftSide {
-        height: auto;
-        margin-bottom: 50px;
-        display:none;
-    }
-
-    .navbar {
-        position: fixed;
-        top: 0;
-        height: 50px;
-        box-shadow: none;
-    }
-
-    #rightSide {
-        top: 50px;
-    }
-
-    .main {
-        margin-top: 80px;
-        height: 250px;
-    }
-
-    .section {
-        height: 40px;
-    }
-
-    table {
-        margin-top: 20px;
-    }
-
-    #plan {
-        margin-top: 20px;
-    }
-}
-
-        @media screen and (max-width: 480px) {
-            /* Adjustments for even smaller screens */
-            #leftSide {
-                padding-top: 20px;
-                height: auto;
-                margin-bottom: 30px;
-            }
-
-                #leftSide a {
-                    font-size: 12px;
-                }
-
-                #leftSide p {
-                    padding-top: 20px;
-                    font-size: 14px;
-                }
-
-            .navbar {
-                height: 40px;
-            }
-
-            .main {
-                margin-top: 60px;
-                height: 200px;
-            }
-
-            .section {
-                height: 30px;
-                font-size: 12px;
-            }
-
-            table {
-                margin-top: 10px;
-            }
-        }
-        @media screen and (max-width: 1100px) {
-            /* Adjustments for smaller screens */
-            #leftSide {
-                height: auto;
-                margin-bottom: 50px;
-                display: none;
-            }
-        }
-#rightSide {
-  transition: transform 0.3s ease;
-}
-
-#rightSide.fit-page {
-  transform: translateX(0);
-}
-
-.sidebar-open #rightSide {
-  transform: translateX(200px);
-}
-
-.sidebar-open #rightSide.fit-page {
-  transform: translateX(200px);
-  width: calc(100% - 200px);
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .sidebar-open #rightSide {
-    transform: translateX(0);
+/* Media queries for smaller devices */
+@media only screen and (max-width: 600px) {
+  /* Adjustments for the navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
-    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  /* Adjustments for the left side panel */
+  #leftSide {
+    position: relative;
+    top: 0;
+    height: auto;
+    overflow-y: hidden;
+    padding-top: 0;
+  }
+  #leftSide a {
+    font-size: 12px;
+  }
+  #leftSide p {
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  /* Adjustments for the main content section */
+  .main {
+    margin-top: 80px;
+    height: auto;
+  }
+  /* Adjustments for the table */
+  table {
+    height: auto;
   }
 }
-
 </style>
 </head>
 <body>
@@ -249,7 +170,7 @@ table th{
             <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></li>
@@ -299,7 +220,7 @@ table th{
       <p><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
       <p><a href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
       <p><a href="#"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
-      <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
+      <p><a href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
       <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
       <p>Accounts</p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
@@ -308,36 +229,30 @@ table th{
          <a href="#">Withdrawals</a>
         </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
-      <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
+      <p><a href="#"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
       <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
       <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
     </div>
       <div class="col-lg-10" id="rightSide" style="width:80%">
-          <h3>Current Plan</h3>
+          <h3>All Documents</h3>
              <div class="btn-group btn-group-lg" id="button">
                <button type="button" id="a" class="btn btn-primary">Home</button>
-               <button type="button" id="a" class="btn btn-primary">Current Plan</button>
+               <button type="button" id="a" class="btn btn-primary">All Documents</button>
              </div> 
           <div class="main">
             <div class="gift">
-                <a href="#"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a>
+                <a href="#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a>
             </div>
          <table  id="js-table-list" class="basic-table dashboard-box-list">
                <tbody><tr>
-                   <th>Membership</th>
-                   <th>Payment Mode</th>
-                   <th>Start Date</th>
-                   <th>Expiry Date</th>
+                   <th>Document</th>
+                   <th>content</th>
+                   <th>Date</th>
+                   <th>Action</th>
                </tr>
                <tr>
-                   <td>Free Plan</td>
-                   <td>One Time </td>
-                   <td>-</td>
-                   <td>-</td>
+                   <td colspan="7">No Documents Found</td>
                 </tr>
-               <tr id="plan">
-                   <td align="right" colspan="7"><button type="button"  class="btn btn-primary" onclick="window.location.href='http://localhost:49935/changeplan.aspx'">Change Plan</button></td>
-               </tr>
            </tbody></table>
         </div>
      </div>
@@ -350,10 +265,6 @@ table th{
                       $("#rightSide").toggleClass('col-lg-12 full-width')
                   });
               });
-     document.getElementById("ClickBtn").addEventListener("click", function () {
-         document.getElementById("rightSide").classList.toggle("fit-page");
-         document.body.classList.toggle("sidebar-open");
-     });
  </script>
 </body>
 </html>
