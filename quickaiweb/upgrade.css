@@ -1,0 +1,94 @@
+﻿.navbar {
+    position: sticky;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+
+footer {
+    height: 80%;
+    background-color: #303030;
+    margin-top: 100px;
+}
+
+.foot {
+    display: flex;
+}
+
+.foot2 {
+    padding: 75px;
+    color: aliceblue;
+}
+
+    .foot2 a {
+        text-decoration: none;
+        list-style-type: none;
+        color: aliceblue;
+        color: #808080;
+    }
+
+.foot4 {
+    padding: 20px;
+    color: #808080;
+}
+
+#foot5 {
+    display: flex;
+    padding-left: 1100px;
+    text-indent: 10px;
+}
+
+.main {
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 100px;
+    display: flex;
+}
+
+.section {
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 50%;
+    height: 450px;
+}
+
+    .section li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+.section1 {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 40%;
+    display: flex;
+    height: 150px;
+    justify-content: space-between
+}
+
+    .section1 li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+#ammm {
+    margin-top: 10px;
+    border-left: 1px solid #eaeaea;
+}
+
+#ammmm {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #fas {
+        display: none;
+    }
+}

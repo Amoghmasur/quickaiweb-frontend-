@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="quickaiweb.dumb" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>Dashboard</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -15,218 +15,66 @@
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<style>
-.vid-list .vid-info {
-    margin-left: 50px;
-}
-
-.list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    margin-top: 65px;
-    background-color: ghostwhite;
-    margin-top: 150px;
-    margin-left: 20px;
-    padding-left: 50px;
-   
-}
-.flex-div {
-    width: 250px;
-    height: 130px;
-    background-color: whitesmoke;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    display: grid;
-    grid-row: inherit;
-    
-}
-    .flex-div i {
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
-
-#leftSide {
-    background-color: #fff;
-    border: 1px;
-    overflow-y: scroll; /* Add the ability to scroll */
-}
-
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    #leftSide::-webkit-scrollbar {
-        display: none;
-    }
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#leftSide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-#rightSide{
-    top:60px;
-}
-
-
-.navbar {
-    position: sticky;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color:white;
-}
-#leftSide{
-    padding-top: 40px;
-    height: 600px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: sticky;
-     top: 0;
-}
-#leftSide a {
-    font-size: 15px;
-    color: #707070;
-}
-
-#leftSide p {
-    padding-top: 30px;
-    color: #1973da;
-}
-
-@media screen and (max-width: 600px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-
-    .row.content {
-        height: auto;
-    }
-
-    .sidenav {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width:0px;
-        height:0px;
-        overflow:hidden;
-    }
-
-    #leftSide {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width: 0px;
-        height: 0px;
-        overflow:hidden;
-    }
-}
- @media screen and (max-width: 900px) {
-            #leftSide {
-                display: none;
-            }
-        }
-
-
- @media screen and (max-width: 768px) {
-			.list-container {
-				flex-direction: column;
-			}
-
-			.vid-list {
-				flex-basis: 100%;
-			}
-
-			.fa-solid {
-				margin-left: 0;
-				margin-bottom: 20px;
-			}
-		}
-footer {
-    background-color: #ffffff;
-    color: grey;
-    bottom: 0;
-}
-footer i{
-    padding-left:800px; 
-}
-#rightSide {
-  transition: transform 0.3s ease;
-}
-
-#rightSide.fit-page {
-  transform: translateX(0);
-}
-
-.sidebar-open #rightSide {
-  transform: translateX(200px);
-}
-
-.sidebar-open #rightSide.fit-page {
-  transform: translateX(200px);
-  width: calc(100% - 200px);
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .sidebar-open #rightSide {
-    transform: translateX(0);
-    width: 100%;
-    transition: transform 0.3s ease, width 0.3s ease;
-  }
-}
-</style>
+    <link href="Dashboard.css" rel="stylesheet" />
 </head>
 <body>
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#"><img width="60px" src="images/hype.png" /></a></li>
-        <li>  <p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <a href="#" id="imageDropdown"  data-toggle="dropdown">
-                <img src="images/unnamed.jpg"  width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+<nav class="navbar col-lg-12">
+        <div class="col-lg-1">
+           <ul class="nav navbar-nav">
+              <li><a> <img  width="60px" src="images/hype.png" /usemap="#workmap"/> </a></li>        
+           </ul>
+             <map name="workmap">
+               <area shape="rect" alt="amogh" coords="24,34,170,150" href="http://localhost:49935/homepage.aspx" onclick="myFunction()"/>
+             </map>
+        </div>
+        <div class="col-lg-1">
+          <ul class="nav navbar-nav">
+            <li><p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
+          </ul>
+        </div>
+       <div class="col-lg-8"></div>
+            <div class="col-lg-1" id="ammm">
+              <ul>
+                <img src="images/unnamed.jpg"  id="imageDropdown"  data-toggle="dropdown" width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
+              <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+              <li ><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
+              <li ><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li ><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li ><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li ><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li ><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
+              <li ><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
+              <li ><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
+              <li ><a href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
             </ul>
+             </div>
+          <div  class="col-lg-1" id="ammmm">  
             <div class="btn-group bootstrap-select language-switcher">
-              <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
-                  <span class="filter-option pull-left" id="selected_lang">en</span>&nbsp;
-                  <span class="caret"></span>
+              <button type="button" data-toggle="dropdown" title="English">
+                  <span >en</span>&nbsp;
               </button>
               <div class="dropdown-menu scrollable-menu open">
                 <ul class="dropdown-menu inner">
-                  <li data-lang="arabic">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Arabic</a>
-                  </li><li data-lang="bangali">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bangali</a>
-                  </li><li data-lang="bulgarian">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bulgarian</a>
-                  </li><li data-lang="chinese">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Chinese</a>
-                  </li><li data-lang="english">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">English</a>
-                  </li><li data-lang="hindi">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Hindi</a> </li>
+                  <li>
+                    <a href="#">Arabic</a>
+                  </li><li>
+                    <a href="#">Bangali</a>
+                  </li><li>
+                    <a href="#">Bulgarian</a>
+                  </li><li>
+                    <a href="#">Chinese</a>
+                  </li><li>
+                    <a href="#">English</a>
+                  </li><li>
+                    <a  href="#">Hindi</a> </li>
                 </ul>
-             </div>
-          </div>
-          </ul>
-      </div>
-    </div>
+           </div>
+     </div>
+  </div>
 </nav>
 <div class="container-fluid text-left">    
   <div class="row content">
-    <div class="col-lg-2 col-xs-0 col-sm-0 col-md-0" id="leftSide" style="width:20%">
+    <div class="col-lg-2" id="leftSide" style="width:20%">
       <p>My Account</p>
       <p><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
@@ -240,65 +88,76 @@ footer i{
       <p><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
       <p><a href="http://localhost:49935/AIchat.aspx"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
       <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
-      <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
+      <p><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
       <p>Accounts</p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
-        <div id="demo4" class="collapse">
+      <div id="demo4" class="collapse">
          <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
-         <a href="#">Withdrawals</a>
-        </div>
+         <a href="http://localhost:49935/Withdrawals.aspx">Withdrawals</a>
+      </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
       <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
       <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
       <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
-
     </div>
-    <div class="col-lg-10 col-xs-12 col-sm-9 col-md-6" id="rightSide" style="width:80%"> 
-        <h3>Dashboard</h3>
-        <div class="list-container">
-            <div class="vid-list">
-                <div class="flex-div text-left">
-                  <span>Words Used</span><br>
-                  <span><b>0/10,000</b></span>
-                  <i   class="fa-solid fa-arrow-trend-up" style="color: #b81b7f;float:right;background-color:#99397641;font-size:50px;margin-left:190px; margin-bottom:300px;"  ></i>
+        <div class="col-lg-10" id="rightSide" style="width:80%">
+        <div class="row">
+            <div class="col-lg-8">
+                <h3>Dashboard</h3>
+            </div>
+            <div class="col-lg-4">
+                 <div class="btn-group btn-group-lg" id="button">
+               <input type="button" id="a" class="btn btn-primary" value="Home" />
+               <input type="button" id="a" class="btn btn-primary" value="Dashboard" />
+             </div>
+            </div>
+        </div>
+           <div class="row">
+            <div class="col-lg-12 col-md-12 " id="box1">
+                 <div class="col-lg-4 col-md-12"  id="box">
+                        <span>Words Used
+                            <h2> <strong>0</strong>/10,000 </h2></span><hr /><hr />
+                      <i class="fa-solid fa-arrow-trend-up" style="color: #b81b7f;padding:28px;font-size:48px;background-color:#99397641;"></i>
                  </div>
-               </div>
-            <div class="vid-list">
-                <div class="flex-div text-left">
-                  <span>Images Used</span><br>
-                  <span><b>0/100</b></span>
-                  <i class="fa-solid fa-chart-simple  " style="color: #0ce938;float:right;background-color:#36BD7812;font-size:50px;margin-left:190px; margin-bottom:300px;" ></i>
+                 <div class="col-lg-4 col-md-12"  id="box2" >
+                      <span>Images Used
+                            <h2><strong>0</strong>/100</h2></span><hr /><hr />
+                      <i class="fa-solid fa-chart-simple" style="color: #36bd78;padding:28px;font-size:48px;background-color: #36bd7812;"></i>                    
                  </div>
-               </div>
-            <div class="vid-list">
-                <div class="flex-div text-left">
-                  <span>Speech to Text</span><br>
-                  <span><b>0/0</b></span>
-                  <i class="fa-solid fa-headphones " style="color: #fdec08;float:right;background-color:#EFA80F12;font-size:50px;margin-left:190px; margin-bottom:300px;"></i>
+                 <div class="col-lg-4 col-md-12"  id="box3">
+                      <span>Speech to Text
+                          <h2><strong>0</strong>/0</h2>
+                      </span><hr /><hr />
+                      <i class="fa-solid fa-headphones"  style="color: #efa80f;padding:28px;font-size:48px;background-color:#efa80f12;"></i>          
                  </div>
-             </div>  
-          </div>
-        <div > 
-          <div>
-            <canvas id="myChart"></canvas>
-          </div>
-      </div>
+            </div>
+        </div>
+          <div class="row">
+              <div class="col-lg-12 col-md-12" id="section">
+                  <p><i class="fa-solid fa-code-branch"></i> <strong>Words used this month </strong></p>
+              </div>
+              <div class="col-lg-12 col-md-12" id="section1">
+                         <div class="col-lg-12 col-md-12">
+                              <canvas id="myChart"></canvas>
+                         </div>               
+              </div>
+           <div class="col-lg-6">
+                <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="container-fluid text-right">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+		            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+		            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+		            <a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+		            <a href="https://in.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+		            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+         </div>
     </div>
-  </div>
-</div>  
-
-<footer class="container-fluid text-center">
-  <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
-    <div class="container-fluid text-right">
-   <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-     <a href="#"><i class="fa-brands fa-instagram"></i></a>
-     <a href="#"><i class="fa-brands fa-twitter"></i></a>
-     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-     <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-     <a href="#"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-</footer>
-
+ </div>
+</div>
+        
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         $(document).ready(function () {

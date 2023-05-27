@@ -22,11 +22,12 @@
 <body>
     <form id="form1" runat="server">
 <nav>
-    <img src="images/hype.png" /usemap="#workmap">  
+    <img src="images/hype.png" /usemap="#workmap"> 
 <map name="workmap">
-  <area shape="rect" coords="34,44,270,350" href="http://localhost:49935/homepage.aspx" onclick="myFunction()">
+  <area shape="rect" alt="amogh" coords="34,44,270,350" href="http://localhost:49935/homepage.aspx" onclick="myFunction()">
 </map>
-<button type="button" class="btn btn-primary" id="btn1" style="margin-top: 10px;"><a href="http://localhost:49935/loginpage.aspx"> Join Now</a>  </button> 
+    <img id="icon" width="30px;" src="images/moon.png" />
+<button type="button" class="btn btn-primary" id="btn1" style="margin-top: 10px;"><a href="http://localhost:49935/loginpage.aspx" > Join Now</a>  </button> 
 <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
       <li class="dropdown">
@@ -40,7 +41,8 @@
           <li><a href="#">English</a></li>
         </ul>
       </li>
-    </ul>  
+    </ul> 
+    </div>
     </nav>
       
         <div>
@@ -83,7 +85,9 @@
 		<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
 	  </div> 
      </div>
+         
     </footer>
+
 </form>
     <script>
         function myFunction() {

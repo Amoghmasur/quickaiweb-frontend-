@@ -1,0 +1,174 @@
+﻿#leftSide {
+    background-color: #fff;
+    border: 1px;
+    overflow-y: scroll; /* Add the ability to scroll */
+}
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    #leftSide::-webkit-scrollbar {
+        display: none;
+    }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#leftSide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.navbar {
+    position: sticky;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+
+#leftSide {
+    padding-top: 40px;
+    height: 600px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: sticky;
+    top: 0;
+}
+
+    #leftSide a {
+        font-size: 15px;
+        color: #707070;
+    }
+
+    #leftSide p {
+        padding-top: 30px;
+        color: #1973da;
+    }
+
+
+@media screen and (max-width: 768px) {
+    #myNavbar {
+        position: static; /* Change position to static for smaller screens */
+        box-shadow: none; /* Remove box-shadow for smaller screens */
+        flex-direction: column; /* Align items vertically for mobile devices */
+        align-items: center;
+        width: auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .list-container {
+        flex-direction: column;
+    }
+
+    .vid-list {
+        flex-basis: 100%;
+    }
+
+    .fa-solid {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+#rightSide {
+    transition: transform 0.3s ease;
+}
+
+    #rightSide.fit-page {
+        transform: translateX(0);
+    }
+
+.sidebar-open #rightSide {
+    transform: translateX(200px);
+}
+
+    .sidebar-open #rightSide.fit-page {
+        transform: translateX(200px);
+        width: calc(100% - 200px);
+        transition: transform 0.3s ease, width 0.3s ease;
+    }
+
+@media (max-width: 768px) {
+    .sidebar-open #rightSide {
+        transform: translateX(0);
+        width: 100%;
+        transition: transform 0.3s ease, width 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #fas {
+        display: none;
+    }
+}
+
+
+#box, #box2, #box3 {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    background-color: white;
+    width: 33%;
+    height: 150px;
+    padding: 30px;
+    display: flex;
+}
+
+#box1 {
+    padding: 50px;
+}
+
+#section {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+#rightSide {
+    top: 100px;
+}
+
+#ammm {
+    margin-top: 10px;
+    border-left: 1px solid #eaeaea;
+}
+
+#ammmm {
+    margin-top: 15px;
+}
+
+#fas {
+    margin-top: 15px;
+    border-left: 1px solid #eaeaea;
+}
+
+@media screen and (max-width: 800px) {
+    /* Adjustments for smaller screens */
+    #box, #box2, #box3, #box1, #section, #section1, #section1 p, #section2, #section3 {
+        height: auto;
+        width: auto;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    /* Adjustments for smaller screens */
+    #box, #box1, #box2, #box3 {
+        height: auto;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    /* Adjustments for smaller screens */
+    #leftSide {
+        height: auto;
+        margin-bottom: 50px;
+        display: none;
+    }
+}

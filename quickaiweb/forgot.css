@@ -34,3 +34,17 @@
         width: 100%;
     }
 }
+@media (max-width: 756px) {
+    .login1 {
+        padding: 10px;
+    }
+
+    h3 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #btn1 {
+        width: 100%;
+    }
+}

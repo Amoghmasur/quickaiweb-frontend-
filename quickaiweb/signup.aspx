@@ -7,20 +7,20 @@
         <div class="login1">
            <h3 style="padding-left: 30px;"> <b>Lets Create Your account</b></h3>
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox1" class="form-control"  placeholder="Full_Name"  runat="server">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox1" class="form-control"  placeholder="Full_Name" required=""  runat="server">
                   </asp:TextBox>
                 </div><br>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox2" class="form-control"  placeholder="User_name"  runat="server">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox2" class="form-control"  placeholder="User_name" required=""  runat="server">
                     </asp:TextBox>
                   </div><br>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox3" class="form-control"  placeholder="Email"  runat="server" TextMode="Email">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox3" class="form-control"  placeholder="Email" required="" runat="server" TextMode="Email">
                  </asp:TextBox>
               </div> 
                 <br>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><asp:TextBox ID="TextBox4" class="form-control" name="password" placeholder="Password" runat="server">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><asp:TextBox ID="TextBox4" class="form-control" name="password" required="" placeholder="Password" runat="server">
                  </asp:TextBox>
               </div><br>
               <div class="form-check">

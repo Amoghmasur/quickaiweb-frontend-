@@ -85,55 +85,124 @@ footer {
     width:70%;
     height:190px;
 }
+
+
+
+
+@media (max-width: 767px) {
+
+    footer {
+        height: 80%;
+        background-color: #303030;
+        margin-top: 20px;
+    }
+
+    .foot {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .foot2 {
+        padding: 20px;
+        color: aliceblue;
+        text-align: center;
+    }
+
+    .foot2 a {
+         text-decoration: none;
+         list-style-type: none;
+         color: #808080;
+     }
+    .foot4 {
+        padding: 20px;
+        color: #808080;
+        text-align: center;
+    }
+
+    .foot5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     .foot4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foot5 {
+        padding-left: 0;
+        text-indent: 0;
+    }
+}
+#ammm{
+      margin-top:10px;
+      border-left:1px solid #eaeaea;
+      }
+#ammmm{
+      margin-top:15px;
+      }
+
+  @media  screen and (max-width: 900px) {
+  .navbar {
+    display:flex;
+    flex-direction:row;
+  }
+  #fas{
+      display:none;    
+  }
+        
+}
 </style>
 </head>
 <body>
-   <nav class="navbar">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#"><img width="60px" src="images/hype.png" /></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <a href="#" id="imageDropdown"  data-toggle="dropdown">
-                <img src="images/unnamed.jpg"  width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+<nav class="navbar col-lg-12">
+        <div class="col-lg-1">
+           <ul class="nav navbar-nav">
+              <li><a><img width="60px" src="images/hype.png" /></a></li>
+           </ul>
+        </div>
+        <div class="col-lg-1">
+        </div>
+       <div class="col-lg-8"></div>
+            <div class="col-lg-1" id="ammm">
+              <ul>
+                <img src="images/unnamed.jpg"  id="imageDropdown"  data-toggle="dropdown" width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
+              <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+              <li ><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
+              <li ><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li ><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li ><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li ><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li ><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
+              <li ><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
+              <li ><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
+              <li ><a href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
             </ul>
+             </div>
+          <div  class="col-lg-1" id="ammmm">  
             <div class="btn-group bootstrap-select language-switcher">
-              <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
-                  <span class="filter-option pull-left" id="selected_lang">en</span>&nbsp;
-                  <span class="caret"></span>
+              <button type="button" data-toggle="dropdown" title="English">
+                  <span >en</span>&nbsp;
               </button>
               <div class="dropdown-menu scrollable-menu open">
                 <ul class="dropdown-menu inner">
-                  <li data-lang="arabic">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Arabic</a>
-                  </li><li data-lang="bangali">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bangali</a>
-                  </li><li data-lang="bulgarian">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bulgarian</a>
-                  </li><li data-lang="chinese">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Chinese</a>
-                  </li><li data-lang="english">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">English</a>
-                  </li><li data-lang="hindi">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Hindi</a> </li>
+                  <li>
+                    <a href="#">Arabic</a>
+                  </li><li>
+                    <a href="#">Bangali</a>
+                  </li><li>
+                    <a href="#">Bulgarian</a>
+                  </li><li>
+                    <a href="#">Chinese</a>
+                  </li><li>
+                    <a href="#">English</a>
+                  </li><li>
+                    <a  href="#">Hindi</a> </li>
                 </ul>
-             </div>
-          </div>
-          </ul>
-      </div>
-    </div>
+           </div>
+     </div>
+  </div>
 </nav>
  <div class="col-lg-12" id="rightSide">
         <div class="row">
@@ -181,54 +250,53 @@ footer {
                              <div class="col-lg-1"></div>
                        </div>
                        <div class="col-lg-6" id="inside2">
-                           <div class="col-lg-1"></div>
+                         <div class="col-lg-1"></div>
                            <div class="col-lg-11">
                                <h3>Post a Comment</h3>
                                <h5>You are commenting as: amogh</h5>
                                <textarea placeholder="Comment Here.!" cols="74" rows="5"></textarea>
                                <button class="btn btn-primary">Submit</button>
                            </div>
-                          </div>
-         </div>
-            <div class="col-lg-4">
-                <div class="col-lg-12" id="inside3">
-                   <input placeholder="Search" type="text" />
-                </div>
-                <div class="col-lg-12">
-                    <h2>Recent Blog</h2>
-                    <img width="100px" src="images/amogh.png" /><b>First blog 3Years Ago</b>
-                </div>
-                <div class="col--lg-12"><h3>Testimonials</h3></div>
-                <div class="col-lg-12">
-
-
-                    <!-- Carousel -->
-                     <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                     
-                       <!-- Indicators/dots -->
-                       <div class="carousel-indicators">
-                         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                         <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                       </div>
-                       
-                       <!-- The slideshow/carousel -->
-                       <div class="carousel-inner">
-                         <div class="carousel-item active">
-                             <div class="single-testimonial slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 320px;" tabindex="-1">
-                                <div class="single-inner">
-                                    <div class="testimonial-content">
-                                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo do consequat. Elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                                    </div>
-                                    <div class="testi-author-info">
-                                        <div class="image"><img src="images/unnamed.jpg" style="width:100px; border-radius:50px;" /></div>
-                                        <h5 class="name">Amogh</h5>
-                                        <span class="designation">Designer</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                         </div>
+                        </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="col-lg-12" id="inside3">
+                         <input placeholder="Search" type="text" />
+                      </div>
+                      <div class="col-lg-12">
+                          <h2>Recent Blog</h2>
+                          <img width="100px" src="images/amogh.png" /><b>First blog 3Years Ago</b>
+                      </div>
+                      <div class="col--lg-12"><h3>Testimonials</h3></div>
+                      <div class="col-lg-12">
+                  
+                  
+                          <!-- Carousel -->
+                           <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                           
+                             <!-- Indicators/dots -->
+                             <div class="carousel-indicators">
+                               <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                               <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                             </div>
+                             
+                             <!-- The slideshow/carousel -->
+                             <div class="carousel-inner">
+                               <div class="carousel-item active">
+                                   <div class="single-testimonial slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 320px;" tabindex="-1">
+                                      <div class="single-inner">
+                                          <div class="testimonial-content">
+                                              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo do consequat. Elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                          </div>
+                                          <div class="testi-author-info">
+                                              <div class="image"><img src="images/unnamed.jpg" style="width:100px; border-radius:50px;" /></div>
+                                              <h5 class="name">Amogh</h5>
+                                              <span class="designation">Designer</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
                          <div class="carousel-item">
                              <div class="single-testimonial slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 320px;" tabindex="-1">
                                 <div class="single-inner">
@@ -244,8 +312,6 @@ footer {
                             </div>
                          </div>
                          <div class="carousel-item">
-                          
-
                              <div class="single-testimonial slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 320px;" tabindex="-1">
                                 <div class="single-inner">
                                     <div class="testimonial-content">
@@ -256,35 +322,14 @@ footer {
                                         <h5 class="name">Amogh</h5>
                                         <span class="designation">Designer</span>
                                     </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                         </div>
+                               </div>
+                           </div>
                        </div>
-                     </div>
-                </div>
-            </div>
+                    </div>
+                 </div>
+             </div>
         </div>
-
-
-
-
-
-
+   </div>
 
 
   <footer>
@@ -311,7 +356,7 @@ footer {
                 <a href="http://hype.sociusus.com/faq">FAQ</a><br><br>
                 <a href="http://hype.sociusus.com/testimonials">Testimonials</a><br>
            </div>
-        </div>
+         </div>
      <div class="foot4">
        <span>2023 Socius IGB Pvt Ltd,&copy; All right reserved.</span>
       <div class="icons" id="foot5">

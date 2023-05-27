@@ -77,11 +77,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accountsettings.aspx" />
+    <Content Include="accountsettings.css" />
     <Content Include="Affiliate.aspx" />
+    <Content Include="affiliate.css" />
+    <Content Include="AI chat.css" />
+    <Content Include="AI Code.css" />
     <Content Include="AIchat.aspx" />
     <Content Include="AICode.aspx" />
     <Content Include="AIimages.aspx" />
+    <Content Include="AIimages.css" />
     <Content Include="all AI images.aspx" />
+    <Content Include="alldocument.css" />
     <Content Include="alldocuments.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
@@ -93,7 +99,9 @@
     </Content>
     <Content Include="blog.aspx" />
     <Content Include="changeplan.aspx" />
+    <Content Include="changeplan.css" />
     <Content Include="dashboard.aspx" />
+    <Content Include="Dashboard.css" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2164,9 +2172,9 @@
     <Content Include="images\sun.png" />
     <Content Include="images\unnamed.jpg" />
     <Content Include="login.css" />
-    <Content Include="loginmediaquery.css" />
     <Content Include="loginpage.aspx" />
     <Content Include="membership.aspx" />
+    <Content Include="membership.css" />
     <Content Include="NewFolder1\bootstrap.min.css" />
     <Content Include="NewFolder1\bootstrap.min.js" />
     <Content Include="NewFolder1\jquery-3.3.1.slim.min.js" />
@@ -2174,10 +2182,16 @@
     <Content Include="signup.aspx" />
     <Content Include="signup.css" />
     <Content Include="speech to text.aspx" />
+    <Content Include="speech to text.css" />
     <Content Include="templates.aspx" />
+    <Content Include="templates.css" />
     <Content Include="transcation.aspx" />
+    <Content Include="transcation.css" />
     <Content Include="upgrade.aspx" />
+    <Content Include="upgrade.css" />
     <Content Include="Web.config" />
+    <Content Include="withdrawal.css" />
+    <Content Include="Withdrawals.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accountsettings.aspx.cs">
@@ -2320,6 +2334,13 @@
     </Compile>
     <Compile Include="upgrade.aspx.designer.cs">
       <DependentUpon>upgrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Withdrawals.aspx.cs">
+      <DependentUpon>Withdrawals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Withdrawals.aspx.designer.cs">
+      <DependentUpon>Withdrawals.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

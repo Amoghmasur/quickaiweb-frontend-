@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="membership.aspx.cs" Inherits="quickaiweb.membership" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Withdrawals.aspx.cs" Inherits="quickaiweb.Withdrawals" %>
+
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Membership</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Affiliate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta charset="utf-8"/>
@@ -14,9 +16,10 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <link href="AI%20Code.css" rel="stylesheet" />
+    <link href="withdrawal.css" rel="stylesheet" />
 </head>
 <body>
+   
 <nav class="navbar col-lg-12">
         <div class="col-lg-1">
            <ul class="nav navbar-nav">
@@ -75,9 +78,9 @@
       <p>My Account</p>
       <p><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
-      <div id="demo" class="collapse">
-          <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
-          <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
+         <div id="demo" class="collapse">
+        <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
+         <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
       </div>
       <p>Organize and manage</p>
       <p><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
@@ -88,10 +91,10 @@
       <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
       <p>Accounts</p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
-      <div id="demo4" class="collapse">
+        <div id="demo4" class="collapse">
          <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
-         <a href="http://localhost:49935/Withdrawals.aspx">Withdrawals</a>
-      </div>
+         <a href="#">Withdrawals</a>
+        </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
       <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
       <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
@@ -100,43 +103,64 @@
       <div class="col-lg-10" id="rightSide" style="width:80%">
         <div class="row">
             <div class="col-lg-6">
-                 <h3 style="color:var(--secondary-color)">AI Code</h3>
-                 <img id="icon" src="images/moon.png" />
+                <h3>Withdrawals</h3>
             </div>
             <div class="col-lg-6">
-               <div class="btn-group btn-group-lg" id="button">
-                    <input type="button" id="a" class="btn btn-primary" value="Home" />
-                    <input type="button" id="a" class="btn btn-primary" value="AI Code" />
-               </div>
+                 <div class="btn-group btn-group-lg" id="button">
+               <input type="button" id="a" class="btn btn-primary" value="Home" />
+               <input type="button" id="a" class="btn btn-primary" value="Withdrawals" />
+             </div>
             </div>
         </div>
-           <div class="row">
-             <div class="col-lg-4">
-                 <div class="hey">
-                 <i class="fa-solid fa-code"></i>&nbsp;AI Code
-             </div>
-             <div class="hi">
-                 <div class="inside">
-                     <p>Use this code generator to create code in any programming language.</p>
-                 </div>
-                 <div class="inside1">
-                     <p><b>Title*</b></p><span>0/100</span><br />
-                     <input name="title" type="text"  class="with-border small-input quick-text-counter" maxlength="20"/><br /><br />
-                     <p><b>Description*</b></p>
-                     <textarea cols="35" rows="3" placeholder="Write a Javascript function to generate a random string"></textarea>
-                     <div ></div>
-                     <button class="btn btn-primary" id="demo" onclick="myFunction()" >Generate</button><br /><br />
-                 </div>
-             </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="inside2">
-                    <p style="color:var(--secondary-color)"><i class="fa-solid fa-align-left fa-xl" style="color: #004dd1;"></i>Generated Result</p>
-                </div><br />
-                <div class="inside3">
-                    <p>Generated code will appear here.</p>
-                </div>
-            </div>
+          <div class="row">
+              <div class="col-lg-12 col-md-12" id="section">
+                  <p class="btn  collapsed" data-toggle="collapse" data-target="#demo5"><i class="fa-regular fa-bell" style="color: #004bcc;"></i>&nbsp;&nbsp;<strong>Request withdrawal </strong>&nbsp;&nbsp;<i class="fa-solid fa-angle-down"></i></p>
+              </div>
+              <div class="col-lg-12 col-md-12 collapse" id="demo5" >
+                  <div class="col-lg-12 col-md-12">
+                      <p>The requested amount will be deducted from your wallet and the amount will be blocked until it get approved or rejected by the administrator. Once its approved, the requested amount will be manually pay to you.</p>
+                  </div>
+                   <div class="col-lg-12 col-md-12">
+                      <div class="col-lg-6 col-md-12">
+                         <h5><b></b>Withdrawal Amount (₹)</h5>
+                          <input type="number" value="50" min="50" step="5" id="myInput"/>
+                          <h6> Minimum withdraw amount : 50 ₹</h6>
+                          <b>Payment Method</b><br />
+                          <input type="radio" name="input" />PayPal<br />
+                          <input type="radio" name="input" />Bank Deposit<br /><br />
+                          <b>Account Details</b><br />
+                          <textarea cols="50" rows="4" onclick="display()" placeholder="Write Payment Details"></textarea><br />
+                          <p>Write here your payment id or payment details of selected payment gateways.</p>
+                          <button class="btn btn-primary" onclick="myStopFunction()" >Withdraw</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+                   <div class="col-lg-12 col-md-12" id="section2">
+                      <p> <i class="fa-solid fa-money-bill fa-lg" style="color: #0045bd;"></i>&nbsp;Withdrawal Requests</p>
+                   </div>
+                   <div class="col-lg-12 col-md-12" id="section3">
+                            <table id="datatable" class="dataTable no-footer">
+                            <thead>
+                            <tr>
+                                <th class="small-width"></th>
+                                <th>Requested On</th>
+                                <th > </th>
+                                <th >Amount</th>
+                                <th></th>
+                                <th>Payment Method</th>
+                                <th class="small-width"></th>
+                                <th class="small-width">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                   <td colspan="7" class="text-center control">No result found.</td>
+                               </tr>
+                             </tbody>
+                          </table>
+                    </div>          
           </div>
            <div class="col-lg-6">
                 <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
@@ -150,11 +174,11 @@
 		            <a href="https://in.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
 		            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
-          </div>
+           </div>
       </div>
    </div>
 </div>
-
+<div id="amogh1"></div>
  <script>
      $(document).ready(function () {
          $("#ClickBtn").click(function () {
@@ -166,23 +190,39 @@
          document.getElementById("rightSide").classList.toggle("fit-page");
          document.body.classList.toggle("sidebar-open");
      });
-
      function myFunction() {
-         alert("API Error: Invalid .");
-         
-     }
+         // Get the text field
+         var copyText = document.getElementById("myInput");
 
-     var icon = document.getElementById("icon");
-     icon.onclick = function () {
-         document.body.classList.toggle("dark-theme");
-         if (document.body.classList.contains("dark-theme")) {
-             icon.src = "images/sun.png";
-         }
-         else {
-             icon.src = "images/moon.png";
-         }
+         // Select the text field
+         copyText.select();
+         copyText.setSelectionRange(0, 99999); // For mobile devices
+
+         // Copy the text inside the text field
+         navigator.clipboard.writeText(copyText.value);
+
+         // Alert the copied text
+         alert("Copied the text: " + copyText.value);
      }
+     //const myTimeout = setTimeout(myGreeting, 30000);
+
+     //function myGreeting() {
+     //    document.getElementById("demo3")
+     //    alert("Oops page Expired!")
+     //}
+     function display() {
+         alert("Page Will Expire in 2min Hurry up!")
+     }
+     function myStopFunction() {
+         const a = document.getElementById("amogh1").innerHTML = "Oops page Expired! Login again"
+         alert(a)
+         document.write(a)
+     }
+     setTimeout(myStopFunction,50000)
    
  </script>
+
+
+
 </body>
 </html>

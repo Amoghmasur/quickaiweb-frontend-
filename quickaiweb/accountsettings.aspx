@@ -14,235 +14,62 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="accountsettings.css" rel="stylesheet" />
 
-<style>
-#leftSide {
-    background-color: #fff;
-    border: 1px;
-    overflow-y: scroll; /* Add the ability to scroll */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-#leftSide::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#leftSide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-
-
-.navbar {
-    position: sticky;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color:white;
-}
-#leftSide{
-    padding-top: 40px;
-    height: 600px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: sticky;
-     top: 0;
-}
-#leftSide a {
-    font-size: 15px;
-    color: #707070;
-}
-
-#leftSide p {
-    padding-top: 30px;
-    color: #1973da;
-}
-
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-
-    .row.content {
-        height: auto;
-    }
-
-    .sidenav {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width:0px;
-        height:0px;
-        overflow:hidden;
-    }
-
-    #leftSide {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width: 0px;
-        height: 0px;
-        overflow:hidden;
-        position:absolute;
-    }
-}
-#rightSide{
-    top:60px;
-}
-#a{
-    background-color:#33334d;
-    color:white;
-}
-#button{
-    float:right;
-}
-.first{
-    margin-top:120px;
-    padding-left:30px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height:300px;
-    margin-bottom:50px;
-}
-#avatar{
-    background-color: #fff;
-
-}
-#avatar:hover{
-    background-color: rgb(16, 166, 216);
-}
-.bill{
-    width:90%;
-    height:40px;
-    background-color:lightblue;
-    padding:10px;
-}
-#items{
-    width:70%;
-}
-.second{
-     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     height:720px;
-     margin-top:120px;
-    padding-left:30px;
-}
-#rightSide {
-  transition: transform 0.3s ease;
-}
-
-#rightSide.fit-page {
-  transform: translateX(0);
-}
-
-.sidebar-open #rightSide {
-  transform: translateX(200px);
-}
-
-.sidebar-open #rightSide.fit-page {
-  transform: translateX(200px);
-  width: calc(100% - 200px);
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .sidebar-open #rightSide {
-    transform: translateX(0);
-    width: 100%;
-    transition: transform 0.3s ease, width 0.3s ease;
-  }
-}
-
-
-@media screen and (max-width: 767px) {
-    .input-group {
-      flex-direction: column;
-    }
-
-    .input-group-addon {
-      border: 1px solid #ccc;
-      border-bottom: 0;
-    }
-
-    .form-control {
-      border: 1px solid #ccc;
-      border-top: 0;
-    }
-
-    .btn-group button {
-      margin-bottom: 10px;
-    }
-
-    .bill {
-      display: none;
-    }
-
-    .city {
-      flex-direction: column;
-    }
-
-    .city input {
-      margin-bottom: 10px;
-    }
-  }
-      @media screen and (max-width: 1100px) {
-          #leftSide {
-              display: none;
-          }
-      }
-
-</style>
 </head>
 <body>
     <form id="form1" runat="server">
-  <nav class="navbar">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#"><img width="60px" src="images/hype.png" /></a></li>
-        <li>  <p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <a href="#" id="imageDropdown"  data-toggle="dropdown">
-                <img src="images/unnamed.jpg"  width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/speech%20to%20text.aspx"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+<nav class="navbar col-lg-12">
+        <div class="col-lg-1">
+           <ul class="nav navbar-nav">
+              <li><a><img width="60px" src="images/hype.png" /></a></li>
+           </ul>
+        </div>
+        <div class="col-lg-1">
+          <ul class="nav navbar-nav">
+            <li><p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
+          </ul>
+        </div>
+       <div class="col-lg-8"></div>
+            <div class="col-lg-1" id="ammm">
+              <ul>
+                <img src="images/unnamed.jpg"  id="imageDropdown"  data-toggle="dropdown" width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
+              <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+              <li ><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
+              <li ><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li ><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li ><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li ><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li ><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
+              <li ><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
+              <li ><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
+              <li ><a href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
             </ul>
+             </div>
+          <div  class="col-lg-1" id="ammmm">  
             <div class="btn-group bootstrap-select language-switcher">
-              <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
-                  <span class="filter-option pull-left" id="selected_lang">en</span>&nbsp;
-                  <span class="caret"></span>
+              <button type="button" data-toggle="dropdown" title="English">
+                  <span >en</span>&nbsp;
               </button>
               <div class="dropdown-menu scrollable-menu open">
                 <ul class="dropdown-menu inner">
-                  <li data-lang="arabic">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Arabic</a>
-                  </li><li data-lang="bangali">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bangali</a>
-                  </li><li data-lang="bulgarian">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bulgarian</a>
-                  </li><li data-lang="chinese">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Chinese</a>
-                  </li><li data-lang="english">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">English</a>
-                  </li><li data-lang="hindi">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Hindi</a> </li>
+                  <li>
+                    <a href="#">Arabic</a>
+                  </li><li>
+                    <a href="#">Bangali</a>
+                  </li><li>
+                    <a href="#">Bulgarian</a>
+                  </li><li>
+                    <a href="#">Chinese</a>
+                  </li><li>
+                    <a href="#">English</a>
+                  </li><li>
+                    <a  href="#">Hindi</a> </li>
                 </ul>
-             </div>
-          </div>
-          </ul>
-      </div>
-    </div>
+           </div>
+     </div>
+  </div>
 </nav>
-  
 <div class="container-fluid text-left">    
   <div class="row content">
     <div class="col-lg-2" id="leftSide" style="width:20%">
@@ -256,62 +83,97 @@
       <p>Organize and manage</p>
       <p><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></p>
       <p><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>Templates</a></p>
-      <p><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
+      <p><a href="#"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></p>
       <p><a href="http://localhost:49935/AIchat.aspx"><i class="fa-solid fa-comment"></i>&nbsp;AI Chat</a></p>
       <p><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></p>
-      <p><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></p>
+      <p><a href="#"><i class="fa-solid fa-file"></i>&nbsp;AI Documents</a></p>
       <p>Accounts</p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
         <div id="demo4" class="collapse">
          <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
-         <a href="#">Withdrawals</a>
+         <a href="http://localhost:49935/Withdrawals.aspx">Withdrawals</a>
         </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
       <p><a href="http://localhost:49935/transcation.aspx"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
       <p><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></p>
       <p><a href="http://localhost:49935/loginpage.aspx"><i class="fa-solid fa-power-off"></i>&nbsp;Logout</a></p>
     </div>
-      <div class="col-lg-10 col-xs-12 col-sm-9 col-md-6" id="rightSide" style="width:80%">
-          <h3>Account Setting</h3>
-             <div class="btn-group btn-group-lg" id="button">
-               <button type="button" id="a" class="btn btn-primary">Home</button>
-               <button type="button" id="a" class="btn btn-primary">Account Settings</button>
+      <div class="col-lg-10" id="rightSide" style="width:80%">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Account settings</h3>
+            </div>
+            <div class="col-lg-6">
+                 <div class="btn-group btn-group-lg" id="button">
+               <input type="button" id="a" class="btn btn-primary" value="Home" />
+               <input type="button" id="a" class="btn btn-primary" value="Account settings" />
              </div>
-          <div class="main">
-              <div class="first"> 
-                  <i class="fa-solid fa-gear"></i>&nbsp;Account settings<br /><br />
-                  <button id="avatar">Upload Avatar</button>&nbsp;Use 150x150px for better use<br /><br />
-                  Username*
-                   <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><asp:TextBox ID="TextBox2" class="form-control"  placeholder="User_name"  runat="server" Width="60%">
-                    </asp:TextBox>
-               
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><asp:TextBox ID="TextBox1" runat="server" Width="60%" class="form-control"  placeholder="Email" TextMode="Email" ></asp:TextBox></div>
-                  <br /><br />
-                 New Password <br /><asp:TextBox ID="TextBox3"  runat="server" Width="30%"  placeholder="New_Password"></asp:TextBox>
-                  <asp:TextBox ID="TextBox4" runat="server"  placeholder="Confirm Password" Width="30%" style="margin-left:240px;" ></asp:TextBox><br /><br />
-                  <asp:Button ID="Button1" class="btn btn-primary" placeholder="Save changes" runat="server" Text="Save Changes" />
-                  </div>
-               <div class="second"> 
-                   <i class="glyphicon glyphicon-qrcode"></i>&nbsp;Billing Details<br /><br /><br />
-                   <div class="bill">These details will be used in invoice and payments.</div><br /><br />
-                   <b>Type</b><br /><br />
-                   <asp:DropDownList ID="DropDownList1" Width="90%" Height="10%" runat="server">
+            </div>
+        </div>
+          <div class="row">
+              <div class="col-lg-12 col-md-12" id="section">
+                  <p><i class="fa-solid fa-gear"></i>&nbsp;Account settings</p>
+              </div>
+              <div class="col-lg-12 col-md-12" id="section1">
+                    <div class="col-lg-12 col-md-12">
+                        <h4><b>Avatar</b></h4>
+                        <button id="avatar">Upload Avatar</button>&nbsp;Use 150x150px for better use<br /><br />
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                         <div class="col-lg-6 col-md-12">
+                            <h3> Username*</h3>
+                            <asp:TextBox ID="TextBox1" class="form-control" required  placeholder="User_name"  runat="server" Width="60%"></asp:TextBox>
+                         </div>
+                         <div class="col-lg-6 col-md-12">
+                            <h3>Email Address* </h3>
+                             <asp:TextBox ID="TextBox2" runat="server" Width="60%" required class="form-control"  placeholder="Email" TextMode="Email" ></asp:TextBox>
+                         </div>
+                        <div class="col-lg-6 col-md-12">
+                            <h3>New Password* </h3>
+                             <asp:TextBox ID="TextBox3" runat="server" Width="60%" required class="form-control"  placeholder="New Password" TextMode="Password" ></asp:TextBox>
+                         </div>
+                        <div class="col-lg-6 col-md-12">
+                            <h3>Confirm Password* </h3>
+                             <asp:TextBox ID="TextBox4" runat="server" Width="60%" required class="form-control"  placeholder="Confirm Password" TextMode="Password" ></asp:TextBox>
+                        </div>
+                     </div>
+                  <div class="col-lg-6 col-md-12">
+                    <h5></h5>
+                    <button onclick="myFunction()" class="btn btn-primary">Save Changes</button>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+                   <div class="col-lg-12 col-md-12" id="section2">
+                      <p><i class="glyphicon glyphicon-qrcode"></i>&nbsp;Billing Details</p>
+                   </div>
+                   <div class="col-lg-12 col-md-12" id="section3">
+                    <p>These details will be used in invoice and payments.</p>
+                    <h4>Type</h4>
+                    <asp:DropDownList ID="DropDownList1" Width="90%" Height="6%" runat="server" required>
                        <asp:ListItem>Personal</asp:ListItem>
                         <asp:ListItem>Business</asp:ListItem>
                    </asp:DropDownList><br /><br />
-                   <b>Name*</b><br /><br />
-                  
-                   <asp:TextBox ID="TextBox5" Width="90%" Height="8%" runat="server"></asp:TextBox><br /><br />
-                   <b>Address*</b><br /><br />
-                    <asp:TextBox ID="TextBox6" Width="90%" Height="8%" runat="server"></asp:TextBox></b><br /><br />
-                  <br />
-                   <div class="city"> <b>City*</b>
-                       <asp:TextBox ID="TextBox7" runat="server" Width="25%" Height="6%"></asp:TextBox>
-                       <b>State*</b><asp:TextBox ID="TextBox8" runat="server" Width="25%" Height="6%"></asp:TextBox>
-                      <b> Pincode*</b><asp:TextBox ID="TextBox9" runat="server" Width="25%" Height="6%"></asp:TextBox>
-                   </div><br /><br />
-                   <asp:DropDownList ID="DropDownList2" Width="90%" Height="8%" runat="server">
+                       <h4>Name</h4>
+                       <asp:TextBox ID="TextBox5" Width="90%" Height="6%" runat="server" required placeholder="Amogh"></asp:TextBox>
+                       <h4>Address</h4>
+                        <asp:TextBox ID="TextBox6" Width="90%" Height="6%" runat="server" required placeholder="Address"></asp:TextBox>
+                       <div class="col-lg-12 col-md-12">
+                           <div class="col-lg-4">
+                           <h4>City</h4>
+                           <asp:TextBox ID="TextBox7" runat="server" Width="85%" Height="6%" placeholder="Eg:Bangalore"></asp:TextBox>
+                           </div>
+                           <div class="col-lg-4">
+                           <h4>State</h4>
+                           <asp:TextBox ID="TextBox8" runat="server" Width="85%" Height="6%" placeholder="Eg:Karnataka"></asp:TextBox>
+                           </div>
+                           <div class="col-lg-4">
+                           <h4>Zip Code</h4>
+                           <asp:TextBox ID="TextBox9" runat="server" Width="85%" Height="6%" required placeholder="Eg:580025"></asp:TextBox>
+                           </div>
+                       </div>
+                       <h4>Country</h4>
+                       <asp:DropDownList ID="DropDownList2" Width="90%" Height="8%" runat="server">
                        <asp:ListItem>Hong</asp:ListItem>
                        <asp:ListItem Value="AF">Afghanistan</asp:ListItem>
                        <asp:ListItem Value="AL">Albania</asp:ListItem>
@@ -330,17 +192,27 @@
                        <asp:ListItem Value="AZ">Azerbaijan</asp:ListItem>
                        <asp:ListItem Value="BS">Bahamas</asp:ListItem>
                        <asp:ListItem Value="BH">Bahrain</asp:ListItem>
-                    </asp:DropDownList><br /><br />
-                    <asp:Button ID="Button2"  class="btn btn-primary" placeholder="Save changes" runat="server" Text="Save Changes" />
-                   </div><br /><br />
-              </div>
-        </div>    
-                                 
-<footer class="container-fluid text-center">
-  <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
-</footer>
-</div>      
+                    </asp:DropDownList><br />
+                        <asp:Button ID="Button2"  class="btn btn-primary" placeholder="Save changes" runat="server" Text="Save Changes" />
+                   </div>          
+          </div>
+           <div class="col-lg-6">
+                <p>2023 Socius IGB Pvt Ltd,&copy; All right reserved</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="container-fluid text-right">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+		            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+		            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+		            <a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+		            <a href="https://in.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+		            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+         </div>
+    </div>
+ </div>
 </div>
+ </form>
         
  <script>
               $(document).ready(function () {
@@ -350,11 +222,13 @@
                   });
               });
 
-     document.getElementById("ClickBtn").addEventListener("click", function () {
-         document.getElementById("rightSide").classList.toggle("fit-page");
-         document.body.classList.toggle("sidebar-open");
-     });
-
+              document.getElementById("ClickBtn").addEventListener("click", function () {
+                  document.getElementById("rightSide").classList.toggle("fit-page");
+                  document.body.classList.toggle("sidebar-open");
+              });
+     function myFunction() {
+         alert("changes Saved! Cool")
+     }
  </script>
             
     </form>

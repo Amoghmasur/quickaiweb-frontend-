@@ -14,219 +14,59 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<style>
-#leftSide {
-    background-color: #fff;
-    border: 1px;
-    overflow-y: scroll; /* Add the ability to scroll */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-#leftSide::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#leftSide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-
-
-.navbar {
-    position: sticky;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color:white;
-}
-#leftSide{
-    padding-top: 40px;
-    height: 600px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: sticky;
-     top: 0;
-}
-#leftSide a {
-    font-size: 15px;
-    color: #707070;
-}
-
-#leftSide p {
-    padding-top: 30px;
-    color: #1973da;
-}
-
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-
-    .row.content {
-        height: auto;
-    }
-
-    .sidenav {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width:0px;
-        height:0px;
-        overflow:hidden;
-    }
-
-    #leftSide {
-        box-shadow: rgba(0, 0,0, 0) 0px 0px 0px 0px;
-        display: none;
-        width: 0px;
-        height: 0px;
-        overflow:hidden;
-        position:absolute;
-    }
-}
-#rightSide{
-    top:60px;
-}
-#a{
-    background-color:#707070;
-    color:white;
-}
-#button{
-    float:right;
-}
-
-.section{
-    justify-content:space-between;
-    display:flex;
-    height:50px;
-    width:90%;
-    top:20px;
-    background-color:#707070;
-    
-}
-.main{
-    margin-top:130px;
-    height:350px; 
-}
-
-/* Media queries for smaller devices */
-@media only screen and (max-width: 600px) {
-  /* Adjustments for the navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  /* Adjustments for the left side panel */
-  #leftSide {
-    position: relative;
-    top: 0;
-    height: auto;
-    overflow-y: hidden;
-    padding-top: 0;
-  }
-  #leftSide a {
-    font-size: 12px;
-  }
-  #leftSide p {
-    padding-top: 20px;
-    font-size: 16px;
-  }
-}
-.input{
-    width:70%;
-    height:50px;
-    border-radius:30px;
-}
-.input1{
-    width:15%;
-    height:50px;
-    border-radius:35px;
-    color:white;
-    background-color:#184698;
-}
-.container p{
-    cursor:pointer;
-    color:#184698;
-}
-#rightSide {
-  transition: transform 0.3s ease;
-}
-
-#rightSide.fit-page {
-  transform: translateX(0);
-}
-
-.sidebar-open #rightSide {
-  transform: translateX(200px);
-}
-
-.sidebar-open #rightSide.fit-page {
-  transform: translateX(200px);
-  width: calc(100% - 200px);
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .sidebar-open #rightSide {
-    transform: translateX(0);
-    width: 100%;
-    transition: transform 0.3s ease, width 0.3s ease;
-  }
-}
-
-</style>
+    <link href="AIimages.css" rel="stylesheet" />
 </head>
 <body>
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#"><img width="60px" src="images/hype.png" /></a></li>
-        <li>  <p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <a href="#" id="imageDropdown"  data-toggle="dropdown">
-            <img src="images/unnamed.jpg"  width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
-          </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/speech%20to%20text.aspx"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+<nav class="navbar col-lg-12">
+        <div class="col-lg-1">
+           <ul class="nav navbar-nav">
+              <li><a><img width="60px" src="images/hype.png" /></a></li>
+           </ul>
+        </div>
+        <div class="col-lg-1">
+          <ul class="nav navbar-nav">
+            <li><p id="fas"><a href="#" id="ClickBtn" class="btn btn-sidebar"><i class="fas fa-bars"></i></a></p></li>
+          </ul>
+        </div>
+       <div class="col-lg-8"></div>
+            <div class="col-lg-1" id="ammm">
+              <ul>
+                <img src="images/unnamed.jpg"  id="imageDropdown"  data-toggle="dropdown" width="30px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />
+              <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+              <li ><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></li>
+              <li ><a href="http://localhost:49935/templates.aspx"><i class="fa-solid fa-layer-group"></i>&nbsp;Templates</a></li>
+              <li ><a href="http://localhost:49935/AIimages.aspx"><i class="fa-solid fa-image"></i>&nbsp;AI Images</a></li>
+              <li ><a href="http://localhost:49935/speech%20to%20text.aspx#"><i class="fa-solid fa-headphones"></i>&nbsp;Speech to text</a></li>
+              <li ><a href="http://localhost:49935/AICode.aspx"><i class="fa-solid fa-code"></i>&nbsp;AI Code</a></li>
+              <li ><a href="http://localhost:49935/alldocuments.aspx#"><i class="fa-solid fa-file"></i>&nbsp;All Documents</a></li>
+              <li ><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></li>
+              <li ><a href="http://localhost:49935/accountsettings.aspx"><i class="fa-solid fa-gear"></i>&nbsp;Account settings</a></li>
+              <li ><a href="http://localhost:49935/loginpage.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
             </ul>
+             </div>
+          <div  class="col-lg-1" id="ammmm">  
             <div class="btn-group bootstrap-select language-switcher">
-              <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="English">
-                  <span class="filter-option pull-left" id="selected_lang">en</span>&nbsp;
-                  <span class="caret"></span>
+              <button type="button" data-toggle="dropdown" title="English">
+                  <span >en</span>&nbsp;
               </button>
               <div class="dropdown-menu scrollable-menu open">
                 <ul class="dropdown-menu inner">
-                  <li data-lang="arabic">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Arabic</a>
-                  </li><li data-lang="bangali">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bangali</a>
-                  </li><li data-lang="bulgarian">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Bulgarian</a>
-                  </li><li data-lang="chinese">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Chinese</a>
-                  </li><li data-lang="english">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">English</a>
-                  </li><li data-lang="hindi">
-                    <a role="menuitem" tabindex="-1" rel="alternate" href="#">Hindi</a> </li>
+                  <li>
+                    <a href="#">Arabic</a>
+                  </li><li>
+                    <a href="#">Bangali</a>
+                  </li><li>
+                    <a href="#">Bulgarian</a>
+                  </li><li>
+                    <a href="#">Chinese</a>
+                  </li><li>
+                    <a href="#">English</a>
+                  </li><li>
+                    <a  href="#">Hindi</a> </li>
                 </ul>
-             </div>
-          </div>
-          </ul>
-      </div>
-    </div>
+           </div>
+     </div>
+  </div>
 </nav>
   
 <div class="container-fluid text-left">    
@@ -235,8 +75,8 @@
       <p>My Account</p>
       <p><a href="http://localhost:49935/dashboard.aspx"><i class="fa-solid fa-border-none"></i>&nbsp;Dashboard</a></p>
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo"><i class="fa-solid fa-file"></i>&nbsp;My Documents&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
-         <div id="demo" class="collapse">
-        <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
+      <div id="demo" class="collapse">
+         <a href="http://localhost:49935/all%20AI%20images.aspx">All AI Images</a><br /><br />
          <a href="http://localhost:49935/alldocuments.aspx#">All AI Documents</a>
       </div>
       <p>Organize and manage</p>
@@ -250,7 +90,7 @@
       <p><a href="#" class="btn  collapsed" data-toggle="collapse" data-target="#demo4"  ><i class="fa-solid fa-code-branch"></i>Affiliate Program&nbsp;<i class="fa-solid fa-angle-down"></i></a></p>
         <div id="demo4" class="collapse">
          <a href="http://localhost:49935/Affiliate.aspx">Affiliate Program</a><br /><br />
-         <a href="#">Withdrawals</a>
+         <a href="http://localhost:49935/Withdrawals.aspx">Withdrawals</a>
         </div>
       <p><a href="http://localhost:49935/membership.aspx"><i class="fa-solid fa-gift"></i>&nbsp;Membership</a></p>
       <p><a href="#"><i class="fa-solid fa-money-bill"></i>&nbsp;Transcation</a></p>
@@ -281,7 +121,7 @@
                                 <h6>Art Style</h6>
                                 <input list="amo" placeholder="New Images" />
                                 <datalist id="amo">
-                                     <option>None</option>
+                                    <option>None</option>
                                     <option>3D render</option>
                                     <option>Pixel</option>
                                     <option>Sticker</option>

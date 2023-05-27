@@ -4,13 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
     <link href="homepage.css" rel="stylesheet" />
-
-
-   
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <style>
-      
-
 .category-1 {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 350px;
@@ -87,13 +82,29 @@
 .section{
     border-radius:10px;
 }
-
-
-@media (max-width: 480px) {
-    .content {
-        padding: 10px;
+@media (max-width: 720px) {
+    .category-7,.category-6,.category-5,.category-4,.category-3,.category-2,.category-1 {
+        width: 250px;
+        height: 100px;
+        margin:auto;
+    }
+    .a,.pp,.iii,.home-templates{
+        width:auto;
+        height:auto;
     }
 }
+@media (max-width: 420px) {
+    .category-7,.category-6,.category-5,.category-4,.category-3,.category-2,.category-1 {
+        width: 150px;
+        height: auto;
+        margin:auto;
+    }
+    .a,.pp,.iii,.home-templates{
+        width:auto;
+        height:auto;
+    } 
+}
+
 
 @media (max-width: 620px) {
     h4 {
@@ -148,23 +159,30 @@
         padding-left: 0;
         text-indent: 0;
     }
+    
+}
+:root {
+    /* --primary-color:#fff;
+    --secondary-color:#212121;*/
+
+    --primary-color: #fff;
+    --secondary-color: #212121;
 }
 
+.dark-theme {
+    --primary-color: #181818;
+    --secondary-color: #fff;
+}
 
-
-    </style>
-    
-
-
+body {
+    background: var(--primary-color);
+}
+</style>
+ 
 <img class="a" src="images/ai.png" />
 <p class="pp">Best AI Content Writer</p>
     <img class="iii" src="images/iii.PNG" /> <br><br>
 <button id="free" class="btn btn-primary"><a href="http://localhost:49935/signup.aspx">Get Started For Free</a></button ><br>
- 
-
-
-
-
     <div class="section padding-top-65 padding-bottom-65" >
         <div class="container margin-bottom-20" >
             <div class="section-headline centered margin-top-0 margin-bottom-30">
@@ -174,28 +192,28 @@
             </div>
             <div class="template-categories home-templates"><br /><br />
                 <ul>
-                    <li class="active"><a href="javascript:void();" class="ai-templates-category"
-                                          data-category="all">All templates</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="1">Article And Blogs</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="2">Ads And Marketing Tools</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="3">General Writing</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="4">Ecommerce</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="5">Social Media</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="6">Website</a></li>
-                                            <li><a href="javascript:void();" class="ai-templates-category"
-                               data-category="7">Other</a></li>
-                                    </ul>
+                    <li class="active"><a href="javascript:void();" class="ai-templates-category" 
+                        data-category="all">All templates</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="1">Article And Blogs</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="2">Ads And Marketing Tools</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="3">General Writing</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="4">Ecommerce</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="5">Social Media</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="6">Website</a></li>
+                    <li><a href="javascript:void();" class="ai-templates-category"
+                        data-category="7">Other</a></li>
+                    </ul>
             </div><br /><br />
-           <div class="row1 ai-template-blocks" id="myTable" >
-                                    <div class="col-md-12 ai-templates-category-title">
+           <div class="row ai-template-blocks" id="myTable" >
+                   <div class=" ai-templates-category-title">
                         <h4>Article And Blogs</h4>
-                                        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                        <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     </div>
                         <div class="col-md-12 col-sm-12 category-1" >
                             <a href="http://hype.sociusus.com/ai-templates/blog-ideas">
@@ -211,7 +229,7 @@
                                 </div>
                             </a>
                         </div>
-                         <div class="col-md-12 col-sm-12 category-1">
+                         <div class="col-md-4 col-sm-6 category-1">
                             <a href="http://hype.sociusus.com/ai-templates/blog-intros">
                                 <div class="dashboard-box ai-templates ">
                                     <div class="content">
@@ -1166,26 +1184,6 @@
                    </div>
               </div>
          </div>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  <div class="main">
         <div class="section">
@@ -1257,11 +1255,10 @@
     </div>
 
 
-    <h3><center>Testimonials</center></h3>
+<h3><center>Testimonials</center></h3>
  <div style="background-color:whitesmoke;" class="testimonials">
     <h2 class="title">Some words from our costumers</h2>
     <p class="description">We've been helping businesses to do their best since 2003.</p>
-  
     <div class="slider-container">
       <div class="slider">
         <div class="slide-box">
@@ -1299,7 +1296,6 @@
           <h4 class="job">UX/UI Designer, Photographer</h4>
         </div>
       </div>
-  
       <a href="#!" class="control-slider btn-left">
         <i class="fas fa-chevron-left"></i>
       </a>
@@ -1307,8 +1303,7 @@
         <i class="fas fa-chevron-right"></i>
       </a>
     </div>
-  </div>
-
+</div>
 <a href="http://localhost:49935/blog.aspx">
 <div class="recentblog">
  <div class="blog" >  
@@ -1328,17 +1323,6 @@
       </div>
 </div>
 </a>
-
-
-
-
-
-
-
-
-
-
-
    <script>
        const sliderElm = document.querySelector(".slider-container .slider");
        const btnLeft = document.querySelector(".slider-container .btn-left");
@@ -1398,6 +1382,15 @@
            inputField.value = "";
        }
        $('.ai-templates-category').on('click', function (e) {           e.preventDefault();           // make active           $('.template-categories li').removeClass('active');           $(this).parents('li').addClass('active');           if ($(this).data('category') === 'all') {               $('.ai-template-blocks > div').show();               $('.ai-templates-category-title').show();           } else {               $('.ai-template-blocks > div').hide();               $('.category-' + $(this).data('category')).show();               $('.ai-templates-category-title').hide();               // empty search               $('#template-search').val('');           }       });
-
+       var icon = document.getElementById("icon");
+       icon.onclick = function () {
+           document.body.classList.toggle("dark-theme");
+           if (document.body.classList.contains("dark-theme")) {
+               icon.src = "images/sun.png";
+           }
+           else {
+               icon.src = "images/moon.png";
+           }
+       }
    </script>  
 </asp:Content>
