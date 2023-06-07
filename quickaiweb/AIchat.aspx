@@ -18,7 +18,55 @@
     <script src="fontawesome/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <link href="AI%20chat.css" rel="stylesheet" />
+    <style>
+        .chatbot-message {
+  color: blue;
+  font-style: italic;
+  width:100%;
+  background-color:aqua;
+  height:30px;
+}
 
+        .message-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.user-message {
+  flex: 1;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.chatbot-message {
+  flex: 1;
+  margin-left: 10px;
+  color: blue;
+  font-style: italic;
+}
+
+.chatbot-response {
+  flex: 1;
+  margin-top: 10px;
+}
+
+
+#output {
+    background-color: #fff;
+    border: 1px;
+    overflow-y: scroll; /* Add the ability to scroll */
+    height:270px;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+#output{
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+
+
+    </style>
 </head>
 <body>
 <nav class="navbar col-lg-12">
@@ -107,20 +155,22 @@
                <button type="button" id="a" class="btn btn-primary">Home</button>
                <button type="button" id="a" class="btn btn-primary">AI Chat</button>
              </div>
-           <div class="main alert-danger col-lg-10">
-                  <p>You can not use the chat feature with your OpenAI model. Upgrade your membership plan to use this feature.</p>
-            </div>
            <div class="col-lg-10 profile">
               <div class="section">
                  <img src="images/unnamed.jpg"  width="35px" style="border: 2px solid #111111; border-radius: 50px;  margin: 0 auto;" />&nbsp;<span><b>AI Chat Bot</b></span>
-                 <a href="#" class="myDIV"><div class="hide">I am shown when someone hovers over the div above.</div><i class="fa-solid fa-file-export fa-2xl" style="color: #003899;"></i></a>
+                 <a href="#" class="myDIV"><i class="fa-solid fa-file-export fa-2xl" style="color: #003899;"></i></a>
                  <a href="#"><i class="fa-solid fa-trash fa-2xl" style="color: #ff0000;"></i></a>
                </div>
            </div>
           <div class="col-lg-10 empty">
+              <div id="output" >
+              
+                
+             </div>
           </div>
           <div class="col-lg-10 send">
-              <input style="width:90%; background:none" placeholder="Type your message here..." type="text" /><button class="btn btn-primary">Send</button>
+               <label for="message">Enter your message:</label>
+              <input style="width:90%; background:none" id="message" placeholder="Type your message here..." type="text" /><button class="btn btn-primary" onclick="sendMessage()">Send</button>
           </div>
           <div class="col-lg-10 foot4">
        <span>2023 Socius IGB Pvt Ltd,&copy; All right reserved.</span>
@@ -149,6 +199,209 @@
          document.getElementById("rightSide").classList.toggle("fit-page");
          document.body.classList.toggle("sidebar-open");
      });
+
+
+
+
+     //async function sendMessage() {
+     //    const message = document.getElementById('message').value;
+     //    const url = `https://ai-chatbot.p.rapidapi.com/chat/free?message=${encodeURIComponent(message)}&uid=user1`;
+     //    const options = {
+     //        method: 'GET',
+     //        headers: {
+     //            'X-RapidAPI-Key': '0f58b9f0fcmshc9fa103264c13f3p136ec2jsnbc4efe819aa6',
+     //            'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+     //        }
+     //    };
+
+     //    try {
+     //        const response = await fetch(url, options);
+     //        const result = await response.text();
+     //        document.getElementById('output').innerText = result;
+     //    } catch (error) {
+     //        console.error(error);
+     //    }
+     //}
+
+
+     //async function sendMessage() {
+     //    const userMessage = document.getElementById('message').value;
+     //    const url = `https://ai-chatbot.p.rapidapi.com/chat/free?message=${encodeURIComponent(userMessage)}&uid=user1`;
+     //    const options = {
+     //        method: 'GET',
+     //        headers: {
+     //            'X-RapidAPI-Key': '0f58b9f0fcmshc9fa103264c13f3p136ec2jsnbc4efe819aa6',
+     //            'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+     //        }
+     //    };
+
+     //    try {
+     //        const response = await fetch(url, options);
+     //        const result = await response.json();
+     //        const botReply = result && result['chatbot']['message'];
+
+     //        // Display bot's reply
+     //        displayMessage(botReply);
+     //    } catch (error) {
+     //        console.error(error);
+     //    }
+     //}
+
+     //function displayMessage(message) {
+     //    const messageContainer = document.getElementById('output');
+     //    const messageElement = document.createElement('p');
+     //    messageElement.textContent = message;
+     //    messageContainer.appendChild(messageElement);
+     //}
+
+
+     async function sendMessage() {
+         const message = document.getElementById('message').value;
+         const url = `https://ai-chatbot.p.rapidapi.com/chat/free?message=${encodeURIComponent(message)}&uid=user1`;
+         const options = {
+             method: 'GET',
+             headers: {
+                 'X-RapidAPI-Key': '0f58b9f0fcmshc9fa103264c13f3p136ec2jsnbc4efe819aa6',
+                 'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+             }
+         };
+
+         try {
+             const response = await fetch(url, options);
+             const result = await response.text();
+             displayMessage(result);
+         } catch (error) {
+             console.error(error);
+         }
+     }
+
+     
+
+     function displayMessage(message) {
+         const messageContainer = document.getElementById('output');
+         const messageElement = document.createElement('p');
+         const formattedMessage = message.replace(/['"]+/g, ''); // Remove the braces from the message
+
+         if (formattedMessage.includes('chatbot')) {
+             messageElement.classList.add('chatbot-message'); // Apply a CSS class to differentiate chatbot messages
+         }
+
+         messageElement.textContent = formattedMessage;
+         messageContainer.appendChild(messageElement);
+     }
+
+
+
+
+
+
+
+
+     //function displayMessage(message) {
+     //    const messageContainer = document.getElementById('output');
+     //    const messageElement = document.createElement('div');
+     //    messageElement.classList.add('message-container');
+
+     //    const formattedMessage = message.replace(/['"]+/g, ''); // Remove the brackets from the message
+     //    const { message: chatbotMessage, response } = JSON.parse(formattedMessage).chatbot;
+
+     //    const userMessageElement = document.createElement('p');
+     //    userMessageElement.classList.add('user-message');
+     //    userMessageElement.textContent = `User: ${message}`;
+
+     //    const chatbotMessageElement = document.createElement('p');
+     //    chatbotMessageElement.classList.add('chatbot-message');
+     //    chatbotMessageElement.textContent = `Chatbot: ${chatbotMessage}`;
+
+     //    const responseElement = document.createElement('p');
+     //    responseElement.classList.add('chatbot-response');
+     //    responseElement.textContent = response;
+
+     //    messageElement.appendChild(userMessageElement);
+     //    messageElement.appendChild(chatbotMessageElement);
+     //    messageElement.appendChild(responseElement);
+
+     //    messageContainer.appendChild(messageElement);
+     //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //function displayMessage(message) {
+     //    const messageContainer = document.getElementById('output');
+     //    const messageElement = document.createElement('p');
+     //    messageElement.textContent = message;
+     //    messageContainer.appendChild(messageElement);
+     //}
+
+    
+
+
+     //async function sendMessage() {
+     //    const message = document.getElementById('message').value;
+     //    const url = 'https://openai80.p.rapidapi.com/models/${encodeURIComponent(message)}';
+     //    const options = {
+     //        method: 'GET',
+     //        headers: {
+     //            'X-RapidAPI-Key': '0f58b9f0fcmshc9fa103264c13f3p136ec2jsnbc4efe819aa6',
+     //            'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
+     //        }
+     //    };
+
+     //    try {
+     //        const response = await fetch(url, options);
+     //        const result = await response.text();
+     //        document.getElementById('output').innerText = result;
+     //    } catch (error) {
+     //        console.error(error);
+     //    }
+     //}
+
+
+
+     //async function sendMessage() {
+     //    const message = document.getElementById('message').value;
+     //    const chatbotUrl = `https://ai-chatbot.p.rapidapi.com/chat/free?message=${encodeURIComponent(message)}&uid=user1`;
+     //    const chatbotOptions = {
+     //        method: 'GET',
+     //        headers: {
+     //            'X-RapidAPI-Key': '0f58b9f0fcmshc9fa103264c13f3p136ec2jsnbc4efe819aa6',
+     //            'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+     //        }
+     //    };
+
+     //    try {
+     //        // Sending the message to the chatbot
+     //        const chatbotResponse = await fetch(chatbotUrl, chatbotOptions);
+     //        const chatbotResult = await chatbotResponse.text();
+     //        document.getElementById('output').innerText = chatbotResult;
+
+     //        // Your response
+     //        const yourResponse = "";
+     //        document.getElementById('your-response').innerText = yourResponse;
+     //    } catch (error) {
+     //        console.error(error);
+     //    }
+     //}
+
 
  </script>
 
